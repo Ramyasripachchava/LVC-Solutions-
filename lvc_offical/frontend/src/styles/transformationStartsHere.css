@@ -1,0 +1,150 @@
+
+.cta-modern-section {
+  position: relative;
+  padding: 120px 8%;
+  overflow: hidden;
+}
+
+.cta-modern-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../assets/bg_image.jpg") no-repeat center center/cover;
+  filter: blur(4px); 
+  transform: scale(1.05); 
+  z-index: 0;
+}
+
+
+.cta-modern-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65); 
+  z-index: 1;
+}
+
+.cta-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 5rem;
+  flex-wrap: wrap;
+  z-index: 2;
+}
+
+.cta-left {
+  flex: 1 1 55%;
+}
+
+.cta-right {
+  flex: 1 1 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+.cta-title {
+  font-size: clamp(2rem, 3vw, 3.5rem);
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.cta-title span {
+  color: #d4af37;
+}
+
+.cta-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+  margin-bottom: 2rem;
+  max-width: 650px;
+}
+
+.cta-divider {
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, #d4af37, transparent);
+}
+
+.cta-primary-btn {
+  background: transparent;
+  border: 2px solid #d4af37;   
+  color: white;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.cta-primary-btn:hover {
+  transform: translateY(-4px);
+  background: #d4af37;
+  color: #000;                 
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+}
+
+.cta-secondary-btn {
+  background: transparent;
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  padding: 12px 28px;
+  border-radius: 50px;
+  transition: all 0.4s ease;
+}
+
+.cta-secondary-btn:hover {
+  background: #d4af37;
+  color: #000;
+}
+
+.cta-outline-btn {
+  background: transparent;
+  border: 1px solid #aaa;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 50px;
+  transition: all 0.4s ease;
+}
+
+.cta-outline-btn:hover {
+  background: #d4af37;       
+  border: 1px solid #d4af37; 
+  color: #000;               
+}
+
+.cta-outline-btn:focus,
+.cta-outline-btn:active,
+.cta-outline-btn:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  border: 1px solid #d4af37 !important;
+}
+.cta-subtitle {
+  letter-spacing: 3px;
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+
+@media (max-width: 992px) {
+  .cta-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .cta-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #d4af37, transparent);
+  }
+
+  .cta-right {
+    align-items: flex-start;
+  }
+}
