@@ -75,14 +75,14 @@ const Home = () => {
         </div>
       </div>
 
-      <section className="grid-section-services">
+      <section className="grid-section-services bg-black ">
         <div className="grid-container-services">
           <div className="grid-item-services">
             <img src="https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Sample" className="grid-image" />
           </div>
-          <div className="grid-item-services text">
-            <h2 className="header-1-clamp">Innovative Solutions</h2>
-            <p className="paragraph-clamp">
+          <div className="grid-item-services text text-white ">
+            <h2 className="header-1-clamp text-white">Innovative Solutions</h2>
+            <p className="paragraph-clamp text-white">
               We deliver cutting-edge solutions that transform businesses and drive growth. 
               Discover how our expertise can empower your journey to success.
             </p>
@@ -90,7 +90,7 @@ const Home = () => {
         </div>
       </section>
 
-      <div className="container-fluid py-5 section-4" style={{ padding: "0 50px" }}>
+      <div className="container-fluid py-5 section-4 bg-black" style={{ padding: "0 50px" }}>
         <div className="row align-items-center">
           <div className="col-md-6 text-section" ref={textRef} style={{ paddingRight: "25px" }}>
             <h2 className="mb-4 header-1-clamp">What We Offer</h2>
@@ -125,12 +125,12 @@ const Home = () => {
       </div>
 
 
-      <div className="section-5 text-section" ref={textRef2}>
-        <h1 style={{ textAlign:"center", color:"white" }}>Transform your Goals into reality</h1>
+      <div className="section-5 text-section " ref={textRef2}>
+        <h1 style={{ textAlign:"center", color:"white",background:"black" }}>Transform your Goals into reality</h1>
       </div>
-      <div className="container py-5 image-section" ref={imageRef2}>
-        <div className="row">
-          <div className="col-md-4 position-relative image-container">
+      <div className="container py-5 image-section " ref={imageRef2}>
+        <div className="row bg-black">
+          <div className="col-md-4 position-relative image-container ">
             <img
               className="w-100 custom-image"
               src="https://images.pexels.com/photos/7947968/pexels-photo-7947968.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
