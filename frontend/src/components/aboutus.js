@@ -236,7 +236,7 @@ const AboutUs = () => {
               </div>
               <div className="tab-paragraph-width text-section" ref={tabRefs.text1}>
                 <h1 className="text-white">Our Mission</h1>
-                <p className="tab-paragraph text-white">
+                <p className="tab-paragraph text-white ">
                   At LVC Solutions, our mission is to empower businesses by
                   delivering innovative solutions that drive growth, streamline
                   operations, and inspire transformation. We are dedicated to
