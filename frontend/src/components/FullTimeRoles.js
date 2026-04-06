@@ -6,7 +6,7 @@ import intern3 from "../assets/intern3.jpg"
 import intern4 from "../assets/intern4.jpg"
 import intern5 from "../assets/intern5.jpeg"
 import intern6 from "../assets/intern6.jpeg"
-
+ 
 const internImages = [
   intern1,
   intern2,
