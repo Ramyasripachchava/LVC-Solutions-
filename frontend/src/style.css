@@ -1270,7 +1270,9 @@ p {
 .swiper-image {
   height: 550px;
 }
-
+.view-more-btn{
+  width: 50%;
+}
 .overlay-text-insight {
   position: absolute;
   top: 250px;
@@ -1307,6 +1309,17 @@ p {
   margin-bottom: 25px;
   background-color: white;
   padding: 50px !important;
+  --swiper-navigation-color: #fff;
+}
+
+.mySwiper .swiper-button-next,
+.mySwiper .swiper-button-prev {
+  color: #fff !important;
+}
+
+.mySwiper .swiper-button-next::after,
+.mySwiper .swiper-button-prev::after {
+  color: #fff !important;
 }
 
 .isight-wrapper {
@@ -1380,11 +1393,19 @@ p {
 }
 
 .pt-customer-review {
-  background-color: #faf9f6;
+  background-color: #000;
   text-align: center;
   padding: 100px;
   border-radius: 25px;
+  border: 1px solid #fff;
+  color: #fff;
   /* width: 500px !important; */
+}
+
+.pt-customer-review-description,
+.pt-customer-review-caption,
+.pt-customer-review-caption strong {
+  color: #fff;
 }
 
 .about-cta {
