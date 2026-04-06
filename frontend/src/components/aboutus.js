@@ -12,7 +12,7 @@ import GoogleLogo from "../assets/google.png";
 import AwsLogo from "../assets/aws.png";
 import SalesLogo from "../assets/salesforce.png";
 import Companies from "./companies.js";
-
+ 
 const AboutUs = () => {
   const [inView, setInView] = useState(false);
 
