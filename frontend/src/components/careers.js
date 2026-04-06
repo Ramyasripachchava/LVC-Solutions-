@@ -15,17 +15,12 @@ import FullTimeRoles from "./FullTimeRoles.js";
 const Careers = () => {
   const navigate = useNavigate();
   const [isFormOpen, setIsFormOpen] = useState(false);
-  const [selectedPosition, setSelectedPosition] = useState("");
+  const selectedPosition = "";
   const openRolesRef = useRef(null);
 
   const handleNavigation = (path) => {
     navigate(path);
     window.scrollTo(0, 0);
-  };
-
-  const handleApplyClick = (position) => {
-    setSelectedPosition(position);
-    setIsFormOpen(true);
   };
 
   const scrollToOpenRoles = () => {

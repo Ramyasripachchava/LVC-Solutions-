@@ -59,7 +59,8 @@ const InternshipCard = ({ title, description, fullDescription, image, onApplyCli
       >
         <h5 className="card-title" style={{ marginBottom: "8px", fontWeight: "700", color: "#ffffff", fontSize: "1.55rem" }}>{title}</h5>
         <p className="card-text" style={{ color: "#f1f5f9", minHeight: "52px", marginBottom: "14px", fontSize: "1.02rem" }}>{description}</p>
-        <a
+        <button
+          type="button"
           className="btn"
           style={{
             marginTop: "8px",
@@ -97,7 +98,7 @@ const InternshipCard = ({ title, description, fullDescription, image, onApplyCli
           onClick={()=> onApplyClick(title, fullDescription) }
         >
           Apply Now
-        </a>
+        </button>
       </div>
     </div>
   );
