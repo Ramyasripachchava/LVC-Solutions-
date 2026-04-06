@@ -2996,6 +2996,7 @@ p.paragraph-clamp {
 
 .spotlight-carousel-services {
   display: flex;
+  justify-content: center;
   max-height: 80%;
   margin-bottom: 20px;
   padding-top: clamp(0rem, 1vmax, 2rem);
@@ -3006,11 +3007,24 @@ p.paragraph-clamp {
   height: 40%;
   color: white;
   margin-bottom: 1.7vmax;
+  text-align: center;
 }
 
 .spotlight-slide2-container {
-  width: 50%;
+  width: 100%;
+  max-width: 720px;
   height: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1.5rem;
+  margin: 0 auto;
+}
+
+.spotlight-slide2-cards h3,
+.spotlight-slide2-cards p {
+  text-align: center;
 }
 
 .spotlight-slide2-bulletpoints {
@@ -3037,11 +3051,13 @@ p.paragraph-clamp {
   .spotlight-carousel-services {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 
   .spotlight-slide2-container {
     width: 100%;
     height: 65%;
+    gap: 1rem;
   }
 }
 
@@ -3057,6 +3073,16 @@ p.paragraph-clamp {
 .ul-list-padding-carousel {
   padding-top: 11vh;
   margin-top: 3vh;
+  width: fit-content;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.ul-list-padding-carousel p {
+  margin-bottom: 0.75rem;
+  text-align: left;
 }
 
 @media (max-width: 1065px) {
