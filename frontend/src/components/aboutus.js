@@ -31,7 +31,7 @@ const AboutUs = () => {
     }),
     []
   );
-
+ 
 
   // Function to generate a random color
   // const getRandomColor = () => {
