@@ -27,8 +27,8 @@ function UncontrolledExample() {
     },
     caption: {
       position: "absolute",
-      top: "40%",
-      transform: "translateY(-50%)",
+      bottom: "8%",
+      // transform: "translateY(-50%)",
       left: "10%",
       right: "10%",
       textAlign: "left",

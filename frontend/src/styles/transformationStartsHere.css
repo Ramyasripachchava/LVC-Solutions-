@@ -9,7 +9,8 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: url("../assets/bg_image.jpg") no-repeat center center/cover;
+  /* background: url("../assets/bg_image.jpg") no-repeat center center/cover; */
+  background-color: #000000;
   filter: blur(4px); 
   transform: scale(1.05); 
   z-index: 0;
@@ -71,7 +72,7 @@
 
 .cta-primary-btn {
   background: transparent;
-  border: 2px solid #d4af37;   
+  border: 2px solid #ffffff;   
   color: white;
   padding: 14px 32px;
   border-radius: 50px;
@@ -79,26 +80,28 @@
   font-weight: 500;
   cursor: pointer;
   transition: all 0.4s ease;
+  width: 250px;
 }
 
 .cta-primary-btn:hover {
   transform: translateY(-4px);
-  background: #d4af37;
+  background: #ffffff;
   color: #000;                 
-  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.4);
 }
 
 .cta-secondary-btn {
   background: transparent;
-  border: 1px solid #d4af37;
-  color: #d4af37;
+  border: 1px solid #ffffff;
+  color: #ffffff;
   padding: 12px 28px;
   border-radius: 50px;
   transition: all 0.4s ease;
+  width: 200px;
 }
 
 .cta-secondary-btn:hover {
-  background: #d4af37;
+  background: #ffffff;
   color: #000;
 }
 
