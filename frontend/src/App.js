@@ -13,6 +13,7 @@ import Careers from './components/careers';
 import BlogPage from './components/blog';
 import CareersIntern from './components/CareersIntern';
 import InternForm from './components/internForm';
+import FullTimeRolesForm from './components/FullTimeRolesForm';
 
 import Products from './components/products';
 import BlogArticle from './components/blogPost';
@@ -38,6 +39,7 @@ function App() {
           <Route path='/blog/:blogId' element={<BlogArticle />} />
           <Route path="/careers-intern" element={<CareersIntern />} />
           <Route path="/careers-intern/form" element={<InternForm />} />
+          <Route path="/career-fulltimeroles" element={<FullTimeRolesForm />} />
           <Route path="/products" element={<Products />} />
           
         </Routes>

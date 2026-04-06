@@ -10,6 +10,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import ApplicationForm from "./applicationform.js";
+import FullTimeRoles from "./FullTimeRoles.js";
 
 const Careers = () => {
   const navigate = useNavigate();
@@ -399,7 +400,7 @@ const Careers = () => {
           </SwiperSlide>
         </Swiper>
       </div>
-      <div className="tab-section" ref={openRolesRef}>
+      {/* <div className="tab-section" ref={openRolesRef}>
         <h1>Open Roles</h1>
         <ul className="nav nav-pills mb-3" id="roles-tab" role="tablist">
           <li className="nav-item" role="presentation">
@@ -571,7 +572,7 @@ const Careers = () => {
             </div>
           </div>
 
-          {/* Backend Developer */}
+          
           <div
             className="tab-pane fade"
             id="backend"
@@ -648,7 +649,7 @@ const Careers = () => {
             </div>
           </div>
 
-          {/* Full Stack Developer */}
+          
           <div
             className="tab-pane fade"
             id="fullstack"
@@ -687,7 +688,7 @@ const Careers = () => {
             </div>
           </div>
 
-          {/* AI & ML Engineer */}
+         
           <div
             className="tab-pane fade"
             id="ai-ml"
@@ -726,7 +727,7 @@ const Careers = () => {
             </div>
           </div>
 
-          {/* Generative AI Engineer */}
+          
           <div
             className="tab-pane fade"
             id="llm"
@@ -765,7 +766,7 @@ const Careers = () => {
             </div>
           </div>
 
-          {/* AI Agents Developer */}
+          
           <div
             className="tab-pane fade"
             id="ai-agents"
@@ -804,7 +805,8 @@ const Careers = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+      <FullTimeRoles />
       <TransformationStartsHere/>
       <Footer />
       <ApplicationForm
