@@ -30,17 +30,6 @@ const LvcSpotlightProduct = () => {
                 />
               </div>
               <div>
-                {/* <h1
-                  className="sportlight-heading"
-                  style={{
-                    color: "white",
-                    fontSize: "clamp(30px, 2.5vmax, 60px)",
-                    margin: 0,
-                    willChange: "transform",
-                  }}
-                >
-                  LVC Spotlight Media
-                </h1> */}
               </div>
             </div>
           </div>
