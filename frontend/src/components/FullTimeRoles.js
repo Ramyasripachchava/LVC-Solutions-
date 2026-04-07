@@ -112,11 +112,11 @@ const internshipData = [
       "Work with frontend technologies and client-side development.",
     fullDescription: (
       <div className="internship-container" style={{ color: "black !important" }}>
-      <p style={{ color: "black" }}><strong>Location:</strong>Remote</p>
-      <p style={{ color: "black" }}><strong>Reports to:</strong>Engineering Manager</p>
+      <p style={{ color: "white" }}><strong>Location:</strong>Remote</p>
+      <p style={{ color: "white" }}><strong>Reports to:</strong>Engineering Manager</p>
 
-      <h5>About LVC Solutions</h5>
-      <p style={{ color: "black" }}>
+      <h5 style={{ color: "white" }}>About LVC Solutions</h5>
+      <p style={{ color: "white" }}>
         At LVC Solutions LLC, we are revolutionizing industries 
         through innovative software solutions. 
         As a rapidly growing IT services company, 
@@ -124,8 +124,8 @@ const internshipData = [
         solve real-world problems.
       </p>
 
-      <h5>Key Responsibilities</h5>
-      <ul>
+      <h5 style={{ color: "white" }}>Key Responsibilities</h5>
+      <ul style={{ color: "white" }}>
         <li>UI Development: Design and implement user-facing features using HTML, CSS, JavaScript, and modern frameworks</li>
         <li>Collaboration: Work closely with cross-functional teams</li>
         <li>Responsive Design: Develop applications across devices</li>
@@ -137,8 +137,8 @@ const internshipData = [
 
       </ul>
 
-      <h5>Required Skills</h5>
-      <ul>
+      <h5 style={{ color: "white" }}>Required Skills</h5>
+      <ul style={{ color: "white" }}>
         <li>HTML, CSS, and JavaScript proficiency</li>
         <li>Modern frontend framework experience</li>
         <li>Responsive design knowledge</li>
@@ -146,16 +146,16 @@ const internshipData = [
         <li>Strong problem-solving skills</li>
       </ul>
 
-      <h5>Additional Skills</h5>
-      <ul>
+      <h5 style={{ color: "white" }}>Additional Skills</h5>
+      <ul style={{ color: "white" }}>
         <li>Advanced React.js, Vue.js, or Angular</li>
         <li>State management expertise</li>
         <li>CSS preprocessor experience</li>
         <li>Performance optimization skills</li>
       </ul>
 
-      <h5>Educational Qualifications</h5>
-      <ul>
+      <h5 style={{ color: "white" }}>Educational Qualifications</h5>
+      <ul style={{ color: "white" }}>
         <li>Bachelor's Degree in Computer Science or related field</li>
         <li>Master's Degree is a plus</li>
       </ul>
@@ -168,18 +168,18 @@ const internshipData = [
     description: "Work with backend technologies and server-side development.",
     fullDescription: (
       <div className="internship-container">
-      <p style={{ color: "black" }}><strong>Location:</strong>Remote</p>
-      <p style={{ color: "black" }}><strong>Reports to:</strong>Engineering Manager</p>
+      <p style={{ color: "white" }}><strong>Location:</strong>Remote</p>
+      <p style={{ color: "white" }}><strong>Reports to:</strong>Engineering Manager</p>
 
-      <h5>About LVC Solutions LLC</h5>
-      <p style={{ color: "black" }}>
+      <h5 style={{ color: "white" }}>About LVC Solutions LLC</h5>
+      <p style={{ color: "white" }}>
         At LVC Solutions LLC, we are dedicated to 
         transforming industries through innovative technology solutions. 
         We are building smart, scalable, and impactful applications.
       </p>
 
-      <h5>Key Responsibilities</h5>
-      <ul>
+      <h5 style={{ color: "white" }}>Key Responsibilities</h5>
+      <ul style={{ color: "white" }}>
         <li>Backend Development: Design and develop server-side logic</li>
         <li>Database Management: Work with SQL and NoSQL databases</li>
         <li>API Development: Create and maintain RESTful APIs</li>
@@ -188,16 +188,16 @@ const internshipData = [
         <li>Troubleshooting: Identify and resolve backend issues</li>
       </ul>
 
-      <h5>Required Skills</h5>
-      <ul>
+      <h5 style={{ color: "white" }}>Required Skills</h5>
+      <ul style={{ color: "white" }}>
         <li>Backend language proficiency (Java/Python/Node.js)</li>
         <li>Database fundamentals</li>
         <li>RESTful API knowledge</li>
         <li>Version control experience</li>
       </ul>
 
-      <h5>Additional Skills</h5>
-      <ul>
+      <h5 style={{ color: "white" }}>Additional Skills</h5>
+      <ul style={{ color: "white" }}>
         <li>Advanced framework knowledge</li>
         <li>Cloud platform experience</li>
         <li>Microservices architecture</li>
@@ -205,8 +205,8 @@ const internshipData = [
         <li>Docker and Kubernetes knowledge</li>
       </ul>
 
-      <h5>Educational Qualifications</h5>
-      <ul>
+      <h5 style={{ color: "white" }}>Educational Qualifications</h5>
+      <ul style={{ color: "white" }}>
         <li>Bachelor's Degree in Computer Science or related field</li>
         <li>Master's Degree is a plus</li>
       </ul>
@@ -221,8 +221,8 @@ const internshipData = [
     description: "Work with both frontend and backend technologies.",
     fullDescription: (
     <div className="internship-container">
-      <h5>Drive end-to-end development of our innovative solutions:</h5>
-      <ul>
+      <h5 style={{ color: "white" }}>Drive end-to-end development of our innovative solutions:</h5>
+      <ul style={{ color: "white" }}>
         <li>Build complete web applications from front to back</li>
         <li>Design and implement database schemas</li>
         <li>Create responsive user interfaces</li>
@@ -239,8 +239,8 @@ const internshipData = [
     description: "Work with AI and Machine Learning technologies.",
     fullDescription: (
       <div className="internship-container">
-      <h5>Create intelligent solutions that transform businessess:</h5>
-      <ul>
+      <h5 style={{ color: "white" }}>Create intelligent solutions that transform businessess:</h5>
+      <ul style={{ color: "white" }}>
         <li>Develop and deploy machine learning models</li>
         <li>Implement computer vision solutions</li>
         <li>Create natural language processing systems</li>
@@ -257,8 +257,8 @@ const internshipData = [
     description: "Work with Generative AI technologies.",
     fullDescription: (
     <div className="internship-container">
-      <h5>Pioneer the future of AI-powered conversations</h5>
-      <ul>
+      <h5 style={{ color: "white" }}>Pioneer the future of AI-powered conversations</h5>
+      <ul style={{ color: "white" }}>
         <li>Develop advanced chatbot solutions</li>
         <li>Fine-tune and deploy LLM models</li>
         <li>Implement prompt engineering techniques</li>
@@ -275,8 +275,8 @@ const internshipData = [
     description: "Work with autonomous AI systems and agent-based technologies.",
     fullDescription: (
     <div className="internship-container">
-      <h5>Build autonomous AI systems that revolutionize work:</h5>
-      <ul>
+      <h5 style={{ color: "white" }}>Build autonomous AI systems that revolutionize work:</h5>
+      <ul style={{ color: "white" }}>
         <li>Develop intelligent AI agents</li>
         <li>Implement multi-agent systems</li>
         <li>Create task automation solutions</li>
@@ -344,7 +344,7 @@ const FullTimeRoles = () => {
                 >
                 <div
                     style={{
-                    backgroundColor: "white",
+                    backgroundColor: "black",
                     padding: "30px",
                     borderRadius: "12px",
                     width: "90%",
@@ -358,23 +358,23 @@ const FullTimeRoles = () => {
                     }}
                     onClick={(e) => e.stopPropagation()}
                 >
-                    <h2 style={{ color: "#000000", marginBottom: "20px" }}>
+                    <h2 style={{ color: "#ffffff", marginBottom: "20px" }}>
                     {selectedJob?.title}
                     </h2>
-                    <h5 style={{ color: "#333", marginBottom: "20px", fontWeight: "600" }}>
+                    <h5 style={{ color: "#ffffff", marginBottom: "20px", fontWeight: "600" }}>
                     Job Description
                     </h5>
                     <div
                     style={{
                         fontSize: "14px",
                         lineHeight: "1.6",
-                        color: "black",
+                        color: "white",
                         maxHeight: "300px",   
                         overflowY: "auto",   
                         padding: "15px",
                         border: "1px solid #ddd",
                         borderRadius: "10px", 
-                        backgroundColor: "#fafafa"
+                        backgroundColor: "#000000"
                     }}
                     >
                     {selectedJob?.fullDescription}
