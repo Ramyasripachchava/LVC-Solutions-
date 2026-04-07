@@ -18,7 +18,7 @@ const TransformationStartsHere = () => {
       <div className="cta-container">
         <div className="cta-left">
           <h2 className="cta-title">
-            Transformation <span>Starts Here</span>
+            Transformation Starts Here
           </h2>
 
           <p className="cta-description">
@@ -53,7 +53,7 @@ const TransformationStartsHere = () => {
           </button>
 
           <button
-            className="cta-outline-btn"
+            className="cta-secondary-btn"
             onClick={() => handleNavigation("/contact")}
           >
             Contact Us

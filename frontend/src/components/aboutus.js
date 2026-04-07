@@ -1,23 +1,14 @@
-import { createRef, useState, useRef, useEffect, useMemo } from "react";
+import { createRef, useRef, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom"; //Added Link import for the contact us / talk with us buttons
 import "../style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { motion } from "framer-motion";
 import TransformationStartsHere from "./transformationStartsHere.js";
 import Footer from "./footer.js";
 import FounderImage from "../assets/founder1.jpeg";
-import MicrosoftLogo from "../assets/microsoft.png";
-import OracleLogo from "../assets/oracle.png";
-import GoogleLogo from "../assets/google.png";
-import AwsLogo from "../assets/aws.png";
-import SalesLogo from "../assets/salesforce.png";
 import Companies from "./companies.js";
-
+ 
 const AboutUs = () => {
-  const [inView, setInView] = useState(false);
-
   const myRef = useRef();
-  const chipsRef = useRef([]);
   const tabRefs = useMemo(
     () => ({
       header: createRef(),
@@ -31,7 +22,7 @@ const AboutUs = () => {
     }),
     []
   );
-
+ 
 
   // Function to generate a random color
   // const getRandomColor = () => {
@@ -48,9 +39,7 @@ const AboutUs = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
-        if (entry.isIntersecting) {
-          setInView(true); // Set the state to true when the element is in view
-        }
+        if (entry.isIntersecting) return;
       },
       { threshold: 0.5 }
     );
@@ -89,30 +78,6 @@ const AboutUs = () => {
 
     return () => observer2.disconnect();
   }, [tabRefs]);
-
-  // Companies for animation
-  const companies = [
-    {
-      name: "Microsoft",
-      logo: MicrosoftLogo,
-    },
-    {
-      name: "Oracle",
-      logo: OracleLogo,
-    },
-    {
-      name: "Google",
-      logo: GoogleLogo,
-    },
-    {
-      name: "AWS",
-      logo: AwsLogo,
-    },
-    {
-      name: "Salesforce",
-      logo: SalesLogo,
-    },
-  ];
 
   return (
     <div className="section-aboutus bg-black">

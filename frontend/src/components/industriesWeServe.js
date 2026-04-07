@@ -21,7 +21,7 @@ const services = [
 
 const Home = () => {
   return (
-    <main style={{ fontSize: "14px",color:"000",fontWeight:"500",background:"white" }}>
+    <main style={{ fontSize: "14px",color:"#ffffff",fontWeight:"500",background:"#000000" }}>
       <div className="container py-5">
        
         <div className="row">

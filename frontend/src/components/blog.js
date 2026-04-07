@@ -205,25 +205,25 @@ function BlogPage() {
           <div className='blog-content'>
             <p className="blog-subtitle">Blog</p>
             <hr className="underline" />
-            <h1 className="blog-title">LVC Solutions Blog</h1>
+            <h1 className="blog-title" style={{fontSize:"48px"}}>LVC Solutions Blog</h1>
             <h5>Insights, updates, and ideas from our team.</h5>
           </div>
         </div>
       </div>
 
-      <div className='blogs-container py-5'>
+      <div className='blogs-container py-5 bg-black text-white'>
         <h1
           style={{ color: '#333', textAlign: 'start' }}
-          className="blog-herotitle"> Keep Up With Blogs  </h1>
+          className="blog-herotitle text-white"> Keep Up With Blogs  </h1>
         <hr className="underline-2" />
 
-        <div className='blog-posts-container'>
+        <div className='blog-posts-container '>
           {posts.slice(offset, offset + 6).map((post) => (
-            <article key={post.id} className="blog-posts">
+            <article key={post.id} className="blog-posts text-white">
               <Link style={{ textDecoration: 'none', color: 'black' }} to={'/blog/' + post.id} state={{ post, image: images[post.id - 1] }}>
                 <img className='blog-posts-imgs' src={images[post.id - 1].src} alt={images[post.id - 1].alt} />
-                <h2>{post.title}</h2>
-                <small>{post.date}</small>
+                <h2 className='text-white'>{post.title}</h2>
+                <small className='text-white'>{post.date}</small>
                 {post.content.length > 110 ? (
                   <p>{post.content.slice(0,110)}... <br/><b style={{color:'light black'}}>Read more</b></p>
                 ) : (

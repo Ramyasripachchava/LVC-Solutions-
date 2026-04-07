@@ -156,7 +156,7 @@ useEffect(() => {
           >
             {/* <div className="modal-body"> */}
             {/* <div className="search-bar-container"> */}
-            <div className="search-bar-wrapper">
+            <div className="search-bar-wrapper bg-black">
               <img
                 className="img-in-search-bar"
                 alt="interactive search logo"
@@ -164,7 +164,7 @@ useEffect(() => {
               />
 
               <input
-                className="search-bar"
+                className="search-bar bg-black"
                 ref={inputRef}
                 style={{outline:"none",border:"none",color:"white",fontSize:"18px",}}
                 type="text"

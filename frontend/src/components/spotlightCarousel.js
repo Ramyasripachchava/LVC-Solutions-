@@ -43,18 +43,15 @@ function SpotLightCarousel() {
             <div className="spotlight-slide2-container">
               <div className="spotlight-slide2-cards">
                 <h3>PR & Media Features</h3>
-                <ul>
-                  <li>Guaranteed placements in Forbes, Entrepreneur, Yahoo</li>
-                  <li>Global brand credibility</li>
-                </ul>
+                  <p>Guaranteed placements in Forbes, Entrepreneur, Yahoo</p>
+                  <p>Global brand credibility</p>
               </div>
 
               <div className="spotlight-slide2-cards">
                 <h3>Founder Branding</h3>
-                <ul>
-                  <li>CEO storytelling & interviews</li>
-                  <li>LinkedIn & social authority</li>
-                </ul>
+                  <p>CEO storytelling & interviews</p>
+                  <p>LinkedIn & social authority</p>
+               
               </div>
             </div>
           </div>
@@ -74,13 +71,13 @@ function SpotLightCarousel() {
             Why Choose LVC Spotlight Media?
           </h2>
 
-          <ul className="ul-list-padding-carousel">
-            <li>Founder-first PR & branding approach</li>
-            <li>Guaranteed media features</li>
-            <li>PR + Digital Growth combined</li>
-            <li>Startup & SaaS focused execution</li>
-            <li>Affordable, scalable packages</li>
-          </ul>
+          <div className="ul-list-padding-carousel">
+            <p>Founder-first PR & branding approach</p>
+            <p>Guaranteed media features</p>
+            <p>PR + Digital Growth combined</p>
+            <p>Startup & SaaS focused execution</p>
+            <p>Affordable, scalable packages</p>
+          </div>
         </Carousel.Caption>
       </Carousel.Item>
 
