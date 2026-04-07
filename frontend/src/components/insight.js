@@ -203,6 +203,20 @@ const Insight = () => {
         <Swiper
           slidesPerView={2}
           spaceBetween={50}
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            1200: {
+              slidesPerView: 2,
+              spaceBetween: 50,
+            },
+          }}
           navigation={{ clickable: true }}
           modules={[Pagination, Navigation]}
           className="mySwiper bg-black text-white"
