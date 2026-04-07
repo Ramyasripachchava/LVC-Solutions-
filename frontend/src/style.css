@@ -1307,9 +1307,18 @@ p {
   display: flex;
   flex-direction: column;
   margin-bottom: 25px;
-  background-color: white;
+  background-color: black;
   padding: 50px !important;
   --swiper-navigation-color: #fff;
+}
+
+.mySwiper .swiper-wrapper {
+  align-items: stretch;
+}
+
+.mySwiper .swiper-slide {
+  height: auto;
+  display: flex;
 }
 
 .mySwiper .swiper-button-next,
@@ -1388,18 +1397,30 @@ p {
   text-align: center;
   color: black;
   font-weight: 500;
-  /* width: -webkit-fill-available; */
-  width: fit-content;
+  width: 100%;
+  line-height: 1.75;
+  margin: 0;
 }
 
 .pt-customer-review {
   background-color: #000;
   text-align: center;
-  padding: 100px;
+  padding: 56px 44px;
   border-radius: 25px;
   border: 1px solid #fff;
   color: #fff;
-  /* width: 500px !important; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.pt-customer-review-caption {
+  margin: 0;
+  width: 100%;
+  line-height: 1.6;
 }
 
 .pt-customer-review-description,
@@ -1724,9 +1745,8 @@ p {
   }
 
   .pt-customer-review {
-    padding: 15px;
+    padding: 28px 20px;
     box-sizing: border-box;
-    line-height: 10px;
     margin-bottom: 25px;
   }
 
