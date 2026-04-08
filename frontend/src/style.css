@@ -330,6 +330,7 @@ footer .logo {
   .custom-carousel-image {
     height: 250px;
   }
+  
 }
 
 .section2 h1 {
@@ -664,6 +665,7 @@ p {
 .services-herotitle {
   color: white;
   font-weight: 600;
+  font-size: 2rem;
 }
 
 .section-aboutus ::before {
@@ -1048,6 +1050,7 @@ p {
   background-color: rgb(0, 0, 0);
   font-style: normal;
   font-size: 2rem;
+  font-weight: 600;
   margin: 0px;
   padding: 10px 0px 0px 50px;
 }
@@ -1626,9 +1629,11 @@ p {
 
 /* Responsive Design for Mobile (320px to 425px) */
 @media (min-width: 320px) and (max-width: 426px) {
-  .industries-we-serve-title {
+  .industries-we-serve-title,.services-herotitle ,.cta-title  {
     padding: 0;
+    font-size: 1.5rem;
   }
+  .services-herotitle
 
   .industries-item {
     flex: 1 1 calc(100% - 20px);
@@ -1699,7 +1704,7 @@ p {
   }
 
   .carousel-caption-style h1 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     /* Reduce the font size for very small screens */
   }
 
@@ -2448,6 +2453,8 @@ p {
     font-size: 1.6rem !important;
     margin-top: 18px;
     line-height: 1.35;
+  }
+
   .navbar-nav button.nav-link {
     text-align: center;
     justify-content: center;
@@ -3393,6 +3400,9 @@ p.paragraph-clamp {
   .academy-carousel.carousel .carousel-control-next {
     right: 8px !important;
   }
+   .btn-career-apply {
+    margin-top: -30px;
+  }
 }
 
 
@@ -3567,7 +3577,7 @@ main:not(.page-home) > section.py-5::after {
   height: 3.5rem;
   max-height: 56px;
   line-height: 160%;
-  width: 12rem;
+  width: 10rem;
 }
 .btn-career:hover {
   background: #ffffff;
