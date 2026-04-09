@@ -180,6 +180,7 @@ footer .logo {
   .custom-navbar {
     --nav-logo-size: 40px;
   }
+  
 }
 
 .custom-navbar .navbar-toggler {
@@ -330,6 +331,9 @@ footer .logo {
   .custom-carousel-image {
     height: 250px;
   }
+  /* .About-section-herobanner{
+width: 100% !important;
+  } */
 }
 
 .section2 h1 {
@@ -1144,6 +1148,9 @@ p {
     margin-bottom: 20px;
     /* Add spacing between image and text */
   }
+  .tab-section h1{
+    font-size: 1.75rem !important;
+  }
 
   .grid-item-services img {
     max-width: 100%;
@@ -1243,10 +1250,15 @@ p {
   .tab-paragraph-width {
     width: 100%;
     text-align: justify;
+   
+  }
+  .tab-para-text{
+ font-size: 0.9rem !important;
   }
 
   .section2aboutus p {
     padding: 25px;
+    font-size: 0.9rem;
   }
 }
 
@@ -1734,6 +1746,7 @@ p {
 
   .nav-pills .nav-link {
     margin-left: 4px;
+    font-size: 1.25rem;
   }
 
   .whatwedo-title {
@@ -1964,7 +1977,8 @@ p {
 }
 
 .founder-header h2 {
-  font-size: 1rem;
+  font-size: 1.25rem;
+  margin-top: -90px;
 }
 
 .founder-underline {
@@ -2016,6 +2030,9 @@ p {
 
   .founder-image {
     margin: 0 auto;
+  }
+  .image-banner-text{
+    font-size: .9rem;
   }
 }
 
@@ -2445,9 +2462,11 @@ p {
   }
 
   .aboutus-mobile-hero-title {
-    font-size: 1.6rem !important;
+    font-size: 1.75rem !important;
     margin-top: 18px;
     line-height: 1.35;
+  }
+
   .navbar-nav button.nav-link {
     text-align: center;
     justify-content: center;
@@ -2497,15 +2516,17 @@ p {
 }
 
 .img-in-search-bar{
-  width:30px;
-  height:30px;
+  width:50px;
+  height:50px;
   flex-shrink:0;
-  margin-top: -15px;
+  margin-top: 0;
+  filter: invert(.75);
 }
 
 .search-bar{
   flex:1;
   height:50px;
+  margin: 0;
   font-size:22px;
   border:none;
   outline:none;
@@ -2533,20 +2554,14 @@ p {
   color:white;
   font-size:28px;
   cursor:pointer;
+  margin: 0;
+  line-height: 1;
 }
 
 
 .search-bar:focus {
   outline: none;
   box-shadow: none;
-}
-
-
-
-.img-in-search-bar {
-  filter: invert(.75);
-  height: 60px;
-  width: 60px
 }
 
 .search-bar-container {
@@ -2571,7 +2586,6 @@ p {
   }
 
 }
-
 @media (min-width: 1080px) and (max-width: 1123px) {
   .search-bar-button {
     position: absolute;

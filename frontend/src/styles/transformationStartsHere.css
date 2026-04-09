@@ -150,4 +150,11 @@
   .cta-right {
     align-items: flex-start;
   }
+  .cta-title{
+    font-size: 1.75rem;
+    margin-top: -70px;
+  }
+  .cta-description{
+    font-size: 0.9rem;
+  }
 }
