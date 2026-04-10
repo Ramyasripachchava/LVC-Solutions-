@@ -332,10 +332,10 @@ footer .logo {
     height: 250px;
   }
   .services-herotitle{
-    font-size: 1.75rem;
+    font-size: 1.2rem;
   }
   .heading-text{
-    font-size: 0.9rem !important;
+    font-size: 1rem !important;
   }
   /* .About-section-herobanner{
 width: 100% !important;
@@ -1149,7 +1149,7 @@ p {
     text-align: center;
   }
 .insight-title{
-font-size: 1.75rem !important;
+font-size: 1.3rem !important;
 }
   .grid-item-services {
     margin-bottom: 20px;
@@ -1548,11 +1548,11 @@ font-size: 1.75rem !important;
   }
 
   .insight-title {
-    font-size: clamp(2rem, 9vw, 2.75rem) !important;
+    font-size: 1.3rem;
   }
 
   .heading-text {
-    font-size: 0.95rem !important;
+    font-size: 1.2rem !important;
   }
 
   .insight-interest-section {
@@ -1607,7 +1607,7 @@ font-size: 1.75rem !important;
   }
 
   .insight-title {
-    margin-bottom: 0.75rem;
+    margin-bottom: 1.3rem;
   }
 
   .insight-interest-card .custom-image {
@@ -1620,6 +1620,12 @@ font-size: 1.75rem !important;
 
   .overlay-text-insight h3 {
     font-size: 1rem;
+  }
+  .view-more-btn{
+    width: 10rem;
+    font-size: 0.9rem;
+    padding: 18px;
+    line-height: 8px;
   }
 }
 
@@ -1672,6 +1678,16 @@ font-size: 1.75rem !important;
 @media (max-width: 459px) {
   .about-cta {
     min-height: 800px !important;
+  }
+  .btn-primary-whatwedo{
+    font-size: 0.9rem;
+    font-weight: bold;
+    width: 9rem;
+  }
+  .pt-customer-review-caption {
+font-size: 0.9rem;
+line-height: 1.7;
+/* margin-top: -20px; */
   }
 }
 
@@ -1823,7 +1839,8 @@ font-size: 1.75rem !important;
     gap: 4rem;
   }
   .isight-wrapper h1 {
-    font-size: 1.75rem;
+    font-size: 1.2rem;
+    font-weight: bold;
   }
 }
 
@@ -1971,7 +1988,7 @@ font-size: 1.75rem !important;
   /* insights*/
   .insight-title {
     font-style: normal;
-    font-size: 1.75rem ;
+    font-size: 1.3rem ;
     color: #fff;
     width: 100%;
     text-align: start;
@@ -2181,11 +2198,12 @@ font-size: 1.75rem !important;
     max-width: 200px;
   }
   .pt-customer-review-description{
-    font-size: 0.9rem;
+    font-size: 0.7rem;
+    text-align: left;
   }
   .insight-section-herobanner{
     height: 50vh;
-    margin-top: 90px ;
+    margin-top: 22px;
   }
 }
 
