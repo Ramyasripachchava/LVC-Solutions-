@@ -181,6 +181,7 @@ footer .logo {
     --nav-logo-size: 40px;
   }
 
+  
 }
 
 .custom-navbar .navbar-toggler {
@@ -337,6 +338,15 @@ footer .logo {
   }
   
   
+  .services-herotitle{
+    font-size: 1.2rem;
+  }
+  .heading-text{
+    font-size: 1rem !important;
+  }
+  /* .About-section-herobanner{
+width: 100% !important;
+  } */
 }
 
 .section2 h1 {
@@ -1031,7 +1041,6 @@ p {
 .insight-title,
 .blog-title {
   font-style: normal;
-  font-size: 4rem;
   line-height: 4rem;
   color: #fff;
   margin-bottom: 2pc;
@@ -1148,15 +1157,36 @@ p {
     grid-template-columns: 1fr;
     text-align: center;
   }
-
+.insight-title{
+font-size: 1.3rem !important;
+}
   .grid-item-services {
     margin-bottom: 20px;
     /* Add spacing between image and text */
+  }
+  .tab-section h1{
+    font-size: 1.2rem !important;
   }
 
   .grid-item-services img {
     max-width: 100%;
     /* Ensure image scales well on smaller screens */
+  }
+  .blog-title,.blog-herotitle{
+    font-size: 1.5rem !important;
+    line-height: 2.5rem;
+  }
+  .blog-description{
+    font-size: 1.25rem !important;
+  }
+  .text-white{
+    font-size: 1.25rem;
+  }
+  .blog-date{
+    font-size: 1rem;
+  }
+  .blog-desc{
+    font-size: 0.9rem;
   }
 }
 
@@ -1252,10 +1282,15 @@ p {
   .tab-paragraph-width {
     width: 100%;
     text-align: justify;
+   
+  }
+  .tab-para-text{
+ font-size: 0.9rem !important;
   }
 
   .section2aboutus p {
     padding: 25px;
+    font-size: 0.9rem;
   }
 }
 
@@ -1276,12 +1311,41 @@ p {
   background-position: center;
   background-attachment: fixed;
   /* This makes the background image fixed */
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 0 50px;
+  padding: 140px 50px 80px;
   color: #fff;
   position: relative;
+}
+
+.insight-container {
+  width: min(100%, 1200px);
+  margin: 0 auto;
+}
+
+.insight-content {
+  width: min(100%, 720px);
+}
+
+.insight-subtitle {
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.insight-title {
+  width: 100%;
+  margin-bottom: 1rem;
+  font-size:3rem;
+  line-height: 1.1;
+}
+
+.heading-text {
+  width: min(100%, 40rem);
+  margin-bottom: 0;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.6;
 }
 
 .btn-primary-insight:hover {
@@ -1292,15 +1356,56 @@ p {
   height: 550px;
 }
 .view-more-btn{
-  width: 50%;
+  width: min(100%, 320px);
 }
+
+.insight-interest-section {
+  padding-inline: clamp(1rem, 3vw, 2rem);
+}
+
+.insight-interest-card {
+  height: 100%;
+}
+
+.insight-interest-card .custom-image {
+  height: clamp(240px, 32vw, 350px);
+  padding: 0;
+  border-radius: 24px;
+}
+
+.insight-interest-card .overlay-text {
+  top: auto;
+  left: clamp(1rem, 3vw, 1.75rem);
+  right: clamp(1rem, 3vw, 1.75rem);
+  bottom: clamp(1rem, 3vw, 1.75rem);
+}
+
+.insight-interest-card .overlay-text h2 {
+  margin: 0;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+}
+
 .overlay-text-insight {
   position: absolute;
-  top: 250px;
-  left: 30px;
+  top: auto;
+  right: 24px;
+  bottom: 24px;
+  left: 24px;
   color: #fff;
   z-index: 2;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.overlay-text-insight h2 {
+  margin-bottom: 0.75rem;
+  font-size: clamp(0.75rem, 1.5vw, 0.95rem);
+  letter-spacing: 0.08em;
+}
+
+.overlay-text-insight h3 {
+  margin: 0;
+  font-size: clamp(1.125rem, 2vw, 1.75rem);
+  line-height: 1.35;
 }
 
 @media (max-width: 1023px) {
@@ -1309,7 +1414,7 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100vw;
+    width: 100%;
     gap: 2rem;
   }
 }
@@ -1354,6 +1459,7 @@ p {
 
 .isight-wrapper {
   background-color: white;
+  padding: 0 clamp(1rem, 3vw, 2rem) clamp(3rem, 6vw, 4rem);
 }
 
 .isight-wrapper h1 {
@@ -1387,6 +1493,17 @@ p {
   max-width: 450px;
 }
 
+.insight-news-card {
+  width: 100%;
+  max-width: 100%;
+}
+
+.insight-news-card .swiper-image {
+  width: 100%;
+  height: clamp(320px, 40vw, 550px);
+  object-fit: cover;
+}
+
 .swiper-image {
   transition: transform 1s ease-in-out;
   transform: scale(1.2);
@@ -1411,6 +1528,130 @@ p {
 
 .insight-readmore-cta:hover:before {
   opacity: 1;
+}
+
+.insight-readmore-link {
+  width: fit-content;
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+}
+
+@media (min-width: 1024px) {
+  .latest-news-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    padding: 2rem 0 0;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .insight-section-herobanner {
+    min-height: 80vh;
+    padding: 130px 32px 64px;
+  }
+
+  .insight-content {
+    width: min(100%, 620px);
+  }
+
+  .overlay-text-insight {
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .insight-section-herobanner {
+    min-height: 60vh;
+    padding: 120px 20px 48px;
+  }
+
+  .insight-container,
+  .insight-content {
+    width: 100%;
+  }
+
+  .insight-title {
+    font-size: 1.3rem;
+  }
+
+  .heading-text {
+    font-size: 1.2rem !important;
+  }
+
+  .insight-interest-section {
+    padding-inline: 0.75rem;
+  }
+
+  .insight-interest-grid {
+    row-gap: 1rem !important;
+  }
+
+  .insight-interest-card .custom-image {
+    height: 240px;
+    border-radius: 20px;
+  }
+
+  .view-more-btn {
+    width: 100%;
+  }
+
+  .isight-wrapper {
+    padding-inline: 0.75rem;
+  }
+
+  .insight-latest-title {
+    font-size: 1.75rem;
+    line-height: 1.3;
+  }
+
+  .swiper-image-container {
+    max-width: 100%;
+  }
+
+  .insight-news-card .swiper-image {
+    height: 360px;
+  }
+
+  .overlay-text-insight {
+    right: 16px;
+    bottom: 16px;
+    left: 16px;
+  }
+
+  .getupdate-number {
+    font-size: 2.75rem;
+  }
+}
+
+@media (max-width: 479.98px) {
+  .insight-section-herobanner {
+    min-height: 56vh;
+    padding: 110px 16px 40px;
+  }
+
+  .insight-title {
+    margin-bottom: 1.3rem;
+  }
+
+  .insight-interest-card .custom-image {
+    height: 220px;
+  }
+
+  .insight-news-card .swiper-image {
+    height: 320px;
+  }
+
+  .overlay-text-insight h3 {
+    font-size: 1rem;
+  }
+  .view-more-btn{
+    width: 10rem;
+    font-size: 0.9rem;
+    padding: 18px;
+    line-height: 8px;
+  }
 }
 
 .pt-customer-review-description {
@@ -1467,6 +1708,15 @@ p {
   margin-left: 0;
   width: 75px;
   height: 64px;
+  .btn-primary-whatwedo{
+    font-size: 0.9rem;
+    font-weight: bold;
+    width: 9rem;
+  }
+  .pt-customer-review-caption {
+font-size: 0.9rem;
+line-height: 1.7;
+/* margin-top: -20px; */
   }
 }
 
@@ -1630,6 +1880,10 @@ p {
   .footer-section-flex {
     gap: 4rem;
   }
+  .isight-wrapper h1 {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
 }
 
 .insight-motion-profile {
@@ -1772,6 +2026,7 @@ p {
 
   .nav-pills .nav-link {
     margin-left: 4px;
+    font-size: 0.9rem;
   }
 
   .whatwedo-title {
@@ -1786,7 +2041,7 @@ p {
   /* insights*/
   .insight-title {
     font-style: normal;
-    font-size: 2rem;
+    font-size: 1.3rem ;
     color: #fff;
     width: 100%;
     text-align: start;
@@ -1995,6 +2250,14 @@ p {
   .partner-logo {
     max-width: 200px;
   }
+  .pt-customer-review-description{
+    font-size: 0.7rem;
+    text-align: left;
+  }
+  .insight-section-herobanner{
+    height: 50vh;
+    margin-top: 22px;
+  }
 }
 
 .founder-header {
@@ -2002,7 +2265,8 @@ p {
 }
 
 .founder-header h2 {
-  font-size: 1rem;
+  font-size: 1.2rem;
+  margin-top: -90px;
 }
 
 .founder-underline {
@@ -2054,6 +2318,9 @@ p {
 
   .founder-image {
     margin: 0 auto;
+  }
+  .image-banner-text{
+    font-size: .9rem;
   }
 }
 
@@ -2483,9 +2750,15 @@ p {
   }
 
   .aboutus-mobile-hero-title {
-    font-size: 1.6rem !important;
+    font-size: 1.3rem !important;
     margin-top: 18px;
     line-height: 1.35;
+  }
+  .btn-primary-whatwedo {
+    font-size: 0.9rem;
+    width: 10rem;
+    font-weight: bold;
+    
   }
 
   .navbar-nav button.nav-link {
@@ -2538,15 +2811,17 @@ p {
 }
 
 .img-in-search-bar{
-  width:30px;
-  height:30px;
+  width:50px;
+  height:50px;
   flex-shrink:0;
-  margin-top: -15px;
+  margin-top: 0;
+  filter: invert(.75);
 }
 
 .search-bar{
   flex:1;
   height:50px;
+  margin: 0;
   font-size:22px;
   border:none;
   outline:none;
@@ -2574,20 +2849,14 @@ p {
   color:white;
   font-size:28px;
   cursor:pointer;
+  margin: 0;
+  line-height: 1;
 }
 
 
 .search-bar:focus {
   outline: none;
   box-shadow: none;
-}
-
-
-
-.img-in-search-bar {
-  filter: invert(.75);
-  height: 60px;
-  width: 60px
 }
 
 .search-bar-container {
@@ -2640,7 +2909,6 @@ p {
   }
 
 }
-
 @media (min-width: 1080px) and (max-width: 1123px) {
   .search-bar-button {
     position: absolute;

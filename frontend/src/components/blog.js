@@ -206,7 +206,7 @@ function BlogPage() {
             <p className="blog-subtitle">Blog</p>
             <hr className="underline" />
             <h1 className="blog-title" style={{fontSize:"48px"}}>LVC Solutions Blog</h1>
-            <h5>Insights, updates, and ideas from our team.</h5>
+            <h5 className='blog-description'>Insights, updates, and ideas from our team.</h5>
           </div>
         </div>
       </div>
@@ -223,11 +223,11 @@ function BlogPage() {
               <Link style={{ textDecoration: 'none', color: 'black' }} to={'/blog/' + post.id} state={{ post, image: images[post.id - 1] }}>
                 <img className='blog-posts-imgs' src={images[post.id - 1].src} alt={images[post.id - 1].alt} />
                 <h2 className='text-white'>{post.title}</h2>
-                <small className='text-white'>{post.date}</small>
+                <small className='text-white  blog-date'>{post.date}</small>
                 {post.content.length > 110 ? (
-                  <p>{post.content.slice(0,110)}... <br/><b style={{color:'light black'}}>Read more</b></p>
+                  <p className='blog-desc'>{post.content.slice(0,110)}... <br/><b style={{color:'light black'}}>Read more</b></p>
                 ) : (
-                  <p>{post.content}</p>
+                  <p className='blog-desc'>{post.content}</p>
                 )}
               </Link>
             </article>

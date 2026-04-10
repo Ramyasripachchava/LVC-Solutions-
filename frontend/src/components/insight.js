@@ -110,8 +110,8 @@ const Insight = () => {
           <div className="insight-content">
             <p className="insight-subtitle">Insight</p>
             <hr className="underline" />
-            <h1 className="insight-title" style={{fontSize:"48px"}}>Where Ideas Meet Action</h1>
-            <h5 >Insights that shape the future.</h5>
+            <h1 className="insight-title">Where Ideas Meet Action</h1>
+            <h5 className="heading-text">Insights that shape the future.</h5>
             <Link to="/contact" className="btn btn-primary-whatwedo mt-4">
               Let's Talk
             </Link>
@@ -120,7 +120,7 @@ const Insight = () => {
       </div>
 
       {/* Insight by Interest Section */}
-      <div style={{ backgroundColor: "black" }} className="container py-5">
+      <div style={{ backgroundColor: "black" }} className="container py-5 insight-interest-section">
         <h1
           style={{ color: "white", textAlign: "center" }}
           className="services-herotitle"
@@ -128,11 +128,11 @@ const Insight = () => {
           Insight by Interest
         </h1>
 
-        <div className="row">
+        <div className="row g-4 insight-interest-grid">
           {images.slice(0, 6).map((img, index) => (
             <div
               key={index}
-              className="col-md-4 position-relative image-container"
+              className="col-12 col-sm-6 col-lg-4 position-relative image-container insight-interest-card"
             >
               <img className="w-100 custom-image" src={img.src} alt={img.alt} />
               <div className="overlay-text">
@@ -145,7 +145,7 @@ const Insight = () => {
             images.slice(6).map((img, index) => (
               <div
                 key={index + 4}
-                className="col-md-4 position-relative image-container"
+                className="col-12 col-sm-6 col-lg-4 position-relative image-container insight-interest-card"
               >
                 <img
                   className="w-100 custom-image"
@@ -168,17 +168,17 @@ const Insight = () => {
 
       {/* Latest News Section */}
       <div className="isight-wrapper bg-black text-white" >
-        <h1 style={{ textAlign: "center" }} className="text-white">Updated with Latest news</h1>
+        <h1 style={{ textAlign: "center" }} className="text-white insight-latest-title">Updated with Latest news</h1>
         <div className="latest-news-container">
           {img.map((img) => (
-            <div className="swiper-image-container position-relative">
+            <div key={img.number} className="swiper-image-container position-relative insight-news-card">
               <img src={img.src} alt={img.alt} className="w-100 swiper-image" />
               <div className="overlay-text overlay-text-insight">
                 <h1 className="getupdate-number">{img.number}</h1>
                 <h2>{img.description}</h2>
                 <h3>{img.title}</h3>
                 <h2
-                  className="insight-readmore-cta"
+                  className="insight-readmore-cta insight-readmore-link"
                   style={{
                     color: "white",
                     paddingTop: "15px",
