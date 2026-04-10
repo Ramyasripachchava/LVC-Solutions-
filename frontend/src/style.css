@@ -1149,7 +1149,7 @@ p {
     /* Add spacing between image and text */
   }
   .tab-section h1{
-    font-size: 1.75rem !important;
+    font-size: 1.2rem !important;
   }
 
   .grid-item-services img {
@@ -1746,7 +1746,7 @@ p {
 
   .nav-pills .nav-link {
     margin-left: 4px;
-    font-size: 1.25rem;
+    font-size: 0.9rem;
   }
 
   .whatwedo-title {
@@ -1977,7 +1977,7 @@ p {
 }
 
 .founder-header h2 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   margin-top: -90px;
 }
 
@@ -2462,9 +2462,15 @@ p {
   }
 
   .aboutus-mobile-hero-title {
-    font-size: 1.75rem !important;
+    font-size: 1.3rem !important;
     margin-top: 18px;
     line-height: 1.35;
+  }
+  .btn-primary-whatwedo {
+    font-size: 0.9rem;
+    width: 10rem;
+    font-weight: bold;
+    
   }
 
   .navbar-nav button.nav-link {
