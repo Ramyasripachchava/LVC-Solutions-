@@ -1173,17 +1173,18 @@ font-size: 1.3rem !important;
     /* Ensure image scales well on smaller screens */
   }
   .blog-title,.blog-herotitle{
-    font-size: 1.5rem !important;
+    font-size: 1.3rem !important;
     line-height: 2.5rem;
+    text-align: center !important;
   }
   .blog-description{
-    font-size: 1.25rem !important;
+    font-size: 1.2rem !important;
   }
   .text-white{
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
   .blog-date{
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   .blog-desc{
     font-size: 0.9rem;
@@ -2747,6 +2748,9 @@ line-height: 1.7;
     background-attachment: scroll;
     /* Change to scroll on mobile */
     background-position: center center;
+  }
+  .blog-section-herobanner{
+    margin-top: -60px;
   }
 
   .aboutus-mobile-hero-title {
