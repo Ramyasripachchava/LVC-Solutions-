@@ -1152,6 +1152,22 @@ p {
     max-width: 100%;
     /* Ensure image scales well on smaller screens */
   }
+  .blog-title,.blog-herotitle{
+    font-size: 1.5rem !important;
+    line-height: 2.5rem;
+  }
+  .blog-description{
+    font-size: 1.25rem !important;
+  }
+  .text-white{
+    font-size: 1.25rem;
+  }
+  .blog-date{
+    font-size: 1rem;
+  }
+  .blog-desc{
+    font-size: 0.9rem;
+  }
 }
 
 .tab-section {
