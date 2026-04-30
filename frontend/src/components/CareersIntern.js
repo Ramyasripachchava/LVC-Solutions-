@@ -127,7 +127,7 @@ const internshipData = [
       <p style={{ color: "white" }}><strong>Company:</strong>LVC Solutions</p>
       <p style={{ color: "white" }}><strong>Location:</strong> Remote (India)</p>
       <p style={{ color: "white" }}><strong>Internship Type:</strong> Paid Summer Internship</p>
-      <p style={{ color: "white" }}><strong>Duration:</strong> 8 Weeks</p>
+      <p style={{ color: "white" }}><strong>Duration:</strong> 12 Weeks</p>
       <p style={{ color: "white" }}><strong>Start Date:</strong> May / June 2026</p>
       <p style={{ color: "white" }}><strong>Stipend:</strong> Paid (Monthly)</p>
 
@@ -243,7 +243,7 @@ const internshipData = [
       <p style={{ color: "white" }}><strong>Company:</strong> LVC Solutions</p>
       <p style={{ color: "white" }}><strong>Location:</strong> Remote (India)</p>
       <p style={{ color: "white" }}><strong>Internship Type:</strong> Paid Summer Internship</p>
-      <p style={{ color: "white" }}><strong>Duration:</strong> 8 Weeks</p>
+      <p style={{ color: "white" }}><strong>Duration:</strong> 12 Weeks</p>
       <p style={{ color: "white" }}><strong>Start Date:</strong> May / June 2026</p>
       <p style={{ color: "white" }}><strong>Stipend:</strong> Paid (Monthly)</p>
 
@@ -362,7 +362,7 @@ const internshipData = [
       <p style={{ color: "white" }}><strong>Company:</strong> LVC Solutions</p>
       <p style={{ color: "white" }}><strong>Location:</strong> Remote (India)</p>
       <p style={{ color: "white" }}><strong>Internship Type:</strong> Paid Summer Internship</p>
-      <p style={{ color: "white" }}><strong>Duration:</strong> 8 Weeks</p>
+      <p style={{ color: "white" }}><strong>Duration:</strong> 12 Weeks</p>
       <p style={{ color: "white" }}><strong>Start Date:</strong> May / June 2026</p>
       <p style={{ color: "white" }}><strong>Stipend:</strong> Paid (Monthly)</p>
 
@@ -482,7 +482,7 @@ const internshipData = [
       <p style={{ color: "white" }}><strong>Company:</strong> LVC Solutions</p>
       <p style={{ color: "white" }}><strong>Location:</strong> Remote (India)</p>
       <p style={{ color: "white" }}><strong>Internship Type:</strong> Paid Summer Internship</p>
-      <p style={{ color: "white" }}><strong>Duration:</strong> 8 Weeks</p>
+      <p style={{ color: "white" }}><strong>Duration:</strong> 12 Weeks</p>
       <p style={{ color: "white" }}><strong>Start Date:</strong> May / June 2026</p>
       <p style={{ color: "white" }}><strong>Stipend:</strong> Paid (Monthly)</p>
 
@@ -600,7 +600,7 @@ const internshipData = [
       <p style={{ color: "white" }}><strong>Company:</strong> LVC Solutions</p>
       <p style={{ color: "white" }}><strong>Location:</strong> Remote (India)</p>
       <p style={{ color: "white" }}><strong>Internship Type:</strong> Paid Summer Internship</p>
-      <p style={{ color: "white" }}><strong>Duration:</strong> 8 Weeks</p>
+      <p style={{ color: "white" }}><strong>Duration:</strong> 12 Weeks</p>
       <p style={{ color: "white" }}><strong>Start Date:</strong> May / June 2026</p>
       <p style={{ color: "white" }}><strong>Stipend:</strong> Paid (Monthly)</p>
 
@@ -709,7 +709,7 @@ const internshipData = [
       <p style={{ color: "white" }}><strong>Company:</strong> LVC Solutions</p>
       <p style={{ color: "white" }}><strong>Location:</strong> Remote (India)</p>
       <p style={{ color: "white" }}><strong>Internship Type:</strong> Paid Summer Internship</p>
-      <p style={{ color: "white" }}><strong>Duration:</strong> 8 Weeks</p>
+      <p style={{ color: "white" }}><strong>Duration:</strong> 12 Weeks</p>
       <p style={{ color: "white" }}><strong>Start Date:</strong> May / June 2026</p>
       <p style={{ color: "white" }}><strong>Stipend:</strong> Paid (Monthly)</p>
 
@@ -826,7 +826,7 @@ const internshipData = [
       <p style={{ color: "white" }}><strong>Company:</strong> LVC Solutions</p>
       <p style={{ color: "white" }}><strong>Location:</strong> Remote (India)</p>
       <p style={{ color: "white" }}><strong>Internship Type:</strong> Paid Summer Internship</p>
-      <p style={{ color: "white" }}><strong>Duration:</strong> 8 Weeks</p>
+      <p style={{ color: "white" }}><strong>Duration:</strong> 12 Weeks</p>
       <p style={{ color: "white" }}><strong>Start Date:</strong> May / June 2026</p>
       <p style={{ color: "white" }}><strong>Stipend:</strong> Paid (Monthly)</p>
 
@@ -949,7 +949,7 @@ const internshipData = [
       <p style={{ color: "white" }}><strong>Company:</strong> LVC Solutions</p>
       <p style={{ color: "white" }}><strong>Location:</strong> Remote (India)</p>
       <p style={{ color: "white" }}><strong>Internship Type:</strong> Paid Summer Internship</p>
-      <p style={{ color: "white" }}><strong>Duration:</strong> 8 Weeks</p>
+      <p style={{ color: "white" }}><strong>Duration:</strong> 12 Weeks</p>
       <p style={{ color: "white" }}><strong>Start Date:</strong> May / June 2026</p>
       <p style={{ color: "white" }}><strong>Stipend:</strong> Paid (Monthly)</p>
 
