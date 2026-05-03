@@ -522,7 +522,7 @@ const internshipData = [
         <li>Propose process improvements and optimization opportunities.</li>
         <li>Assist in defining end-to-end business and product flows.</li>
       </ul>
-
+ 
       <h5 style={{ color: "white" }}>Documentation</h5>
       <ul style={{ color: "white" }}>
         <li>Prepare Business Requirement Documents (BRDs) and Functional Requirement Documents(FRDs).</li>
