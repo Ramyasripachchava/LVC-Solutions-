@@ -6,6 +6,7 @@ const InternForm = () => {
   const [step, setStep] = useState(1);
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
 
   const SCRIPT_URL = process.env.REACT_APP_INTERN_SCRIPT_URL;
   const SCRIPT_SECRET = process.env.REACT_APP_SCRIPT_SECRET;
@@ -128,10 +129,16 @@ const InternForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     if (loading) return;
-    setLoading(true);
+    // Show payment modal first
+    if (validateStep()) {
+      setShowPaymentModal(true);
+    }
+  };
 
+  const handlePaymentAgree = async () => {
+    setShowPaymentModal(false);
+    setLoading(true);
     try {
       const payload = {
         secret: SCRIPT_SECRET,
@@ -151,16 +158,12 @@ const InternForm = () => {
         state: formData.state,
         city: formData.city,
       };
-
       await fetch(SCRIPT_URL, {
         method: "POST",
         mode: "no-cors",
-        headers: {
-          "Content-Type": "text/plain",
-        },
+        headers: { "Content-Type": "text/plain" },
         body: JSON.stringify(payload),
       });
-
       setStep(4);
     } catch (error) {
       console.error("Error:", error);
@@ -504,6 +507,82 @@ const InternForm = () => {
         )}
         <MemoizedDisclaimer />
       </div>
+
+      {showPaymentModal && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0, left: 0,
+            width: "100%", height: "100%",
+            backgroundColor: "rgba(0,0,0,0.80)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 2000,
+          }}
+        >
+          <div
+            style={{
+              backgroundColor: "#000000",
+              padding: "44px 40px",
+              borderRadius: "18px",
+              width: "90%",
+              maxWidth: "460px",
+              boxShadow: "0 24px 70px rgba(0,0,0,0.9)",
+              border: "1px solid rgba(255,255,255,0.15)",
+              textAlign: "center",
+            }}
+          >
+            <p style={{ color: "#ffffff", fontSize: "0.95rem", marginBottom: "6px", lineHeight: "1.65" }}>
+              To complete your application, a one-time screening fee is required.
+            </p>
+            <p style={{ color: "#ffffff", fontSize: "0.83rem", marginBottom: "30px", lineHeight: "1.6" }}>
+              By clicking <strong>Agree &amp; Pay</strong>, you confirm your agreement to pay <strong>Rs.350</strong> for the internship screening process.
+            </p>
+
+            <div style={{ display: "flex", gap: "12px" }}>
+              <button
+                onClick={() => setShowPaymentModal(false)}
+                style={{
+                  flex: 1, padding: "13px 20px",
+                  backgroundColor: "transparent",
+                  color: "#ffffff",
+                  border: "1px solid rgba(255,255,255,0.22)",
+                  borderRadius: "9px", cursor: "pointer",
+                  fontSize: "0.95rem", fontWeight: "500",
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.06)"}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handlePaymentAgree}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "10px",
+                  flex: 1,                  
+                  padding: "13px 20px", 
+                  backgroundColor: "#22c55e",
+                  color: "#ffffff",
+                  border: "none",
+                  borderRadius: "9px",
+                  fontSize: "0.95rem",  
+                  fontWeight: "500",
+                  cursor: "pointer",
+                  transition: "background 0.15s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#16a34a")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#22c55e")}
+              >
+                ✓ Agree
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
