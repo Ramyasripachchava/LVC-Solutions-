@@ -111,22 +111,6 @@ const Contact = () => {
                 <div className="contact-detail">
                   <MapPin className="contact-icon" />
                   <span>
-                    5015 Addison Circle,
-                    <br />
-                    Addison,TX 75001, United States
-                  </span>
-                </div>
-                <div className="contact-detail">
-                  <MapPin className="contact-icon" />
-                  <span className="address-footer">
-                    Unit No 203, 2nd Floor Suite #<br />
-                    749,SBR CV Towers, Sector-l, Sy No 64,HUDA Techno Enclave,
-                    Madhapur, Hyderabad - 500081
-                  </span>
-                </div>
-                <div className="contact-detail">
-                  <MapPin className="contact-icon" />
-                  <span>
                     Unit No 203, 2nd Floor Suite # 749,SBR CV Towers, Sector-l,
                     Sy No 64,HUDA Techno Enclave, Madhapur, Hyderabad - 500081
                   </span>
