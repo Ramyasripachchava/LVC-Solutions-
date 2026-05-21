@@ -100,12 +100,20 @@ const Contact = () => {
           <div className="contact-info">
             <div className="contact-overlay">
               <div className="contact-details">
-                <div className="contact-detail">
+                 <div className="contact-detail">
                   <MapPin className="contact-icon" />
                   <span>
                     228 Hamilton Avenue 3rd Floor,
                     <br />
                     Palo Alto,CA 94301, United States
+                  </span>
+                </div>
+                <div className="contact-detail">
+                  <MapPin className="contact-icon" />
+                  <span>
+                    5015 Addison Circle,
+                    <br />
+                   Addison,TX 75001, United States
                   </span>
                 </div>
                 <div className="contact-detail">

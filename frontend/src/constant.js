@@ -38,5 +38,9 @@ export const quickLink = [
     rel: "noopener noreferrer" },
 ];
 
-export const address = `228 Hamilton Ave, 3rd Floor,
+export const address = `
+5015 Addison Circle,
+Addison, TX 75001, USA
+
+228 Hamilton Ave, 3rd Floor,
 Palo Alto, CA 94301, USA`;
