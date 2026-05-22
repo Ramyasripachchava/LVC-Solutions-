@@ -38,7 +38,8 @@ export const quickLink = [
     rel: "noopener noreferrer" },
 ];
 
-export const address = `5015 Addison Circle,
+export const address = `
+5015 Addison Circle,
 Addison, TX 75001, USA
 
 228 Hamilton Ave, 3rd Floor,
