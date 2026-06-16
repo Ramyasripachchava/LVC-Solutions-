@@ -1175,6 +1175,326 @@ const internshipData = [
       </ol>
     </div>
     )
+  },
+  {
+    id: 10,
+    title: "HR Intern",
+    description: "Support human resources operations, recruitment, and employee engagement.",
+    fullDescription: (
+      <div className="internship-container">
+        <p style={{ color: "white" }}><strong>Company:</strong> LVC Solutions</p>
+        <p style={{ color: "white" }}><strong>Location:</strong> Remote (India)</p>
+        <p style={{ color: "white" }}><strong>Internship Type:</strong> Paid Summer Internship</p>
+        <p style={{ color: "white" }}><strong>Duration:</strong> 12 Weeks</p>
+        <p style={{ color: "white" }}><strong>Start Date:</strong> May / June 2026</p>
+        <p style={{ color: "white" }}><strong>Stipend:</strong> Paid (Monthly)</p>
+
+        <h5 style={{ color: "white" }}>About LVC Solutions</h5>
+        <p style={{ color: "white" }}>
+          LVC Solutions is a technology company building scalable software and AI-powered platforms
+          across recruitment, analytics, and automation. We believe that great teams are the foundation
+          of great products, and our HR function plays a central role in building and sustaining that culture.
+          Our internship program gives students practical exposure to real HR operations within a fast-growing
+          startup environment.
+        </p>
+
+        <h5 style={{ color: "white" }}>Role Overview</h5>
+        <p style={{ color: "white" }}>
+          As an HR Intern, you will support the Human Resources team across recruitment, onboarding,
+          employee engagement, and HR operations. You will gain hands-on experience working with real
+          hiring pipelines, HR documentation, and people management processes within a live startup
+          environment. This is a paid internship designed for students who want practical experience
+          in human resources and people operations.
+        </p>
+
+        <h5 style={{ color: "white" }}>Roles and Responsibilities</h5>
+
+        <h5 style={{ color: "white" }}>Recruitment and Talent Acquisition</h5>
+        <ul style={{ color: "white" }}>
+          <li>Assist in sourcing, screening, and shortlisting candidates for open positions.</li>
+          <li>Coordinate interview schedules and communicate with candidates.</li>
+          <li>Maintain applicant tracking and recruitment data.</li>
+          <li>Support drafting of job descriptions and job postings.</li>
+        </ul>
+
+        <h5 style={{ color: "white" }}>Onboarding and Offboarding</h5>
+        <ul style={{ color: "white" }}>
+          <li>Assist in preparing onboarding materials and documentation for new hires.</li>
+          <li>Coordinate induction schedules and orientation activities.</li>
+          <li>Support exit processes and documentation when required.</li>
+        </ul>
+
+        <h5 style={{ color: "white" }}>HR Operations and Documentation</h5>
+        <ul style={{ color: "white" }}>
+          <li>Maintain and update employee records and HR databases.</li>
+          <li>Assist in drafting HR policies, letters, and internal communications.</li>
+          <li>Support compliance with HR procedures and documentation standards.</li>
+        </ul>
+
+        <h5 style={{ color: "white" }}>Employee Engagement</h5>
+        <ul style={{ color: "white" }}>
+          <li>Assist in planning and coordinating team engagement activities.</li>
+          <li>Collect and analyze employee feedback surveys.</li>
+          <li>Support initiatives to improve workplace culture and team morale.</li>
+        </ul>
+
+        <h5 style={{ color: "white" }}>Eligibility Criteria</h5>
+        <ul style={{ color: "white" }}>
+          <li>BBA / MBA (HR) / B.Com / BA or any management-related degree students</li>
+          <li>Eligible years: 2nd year, 3rd year, and final year</li>
+          <li>Strong interest in human resources and people management</li>
+          <li>Ability to commit 40 hours per week during the internship period</li>
+        </ul>
+
+        <h5 style={{ color: "white" }}>Required Skills</h5>
+        <ul style={{ color: "white" }}>
+          <li>Good verbal and written communication skills</li>
+          <li>Strong interpersonal and organizational skills</li>
+          <li>Ability to maintain confidentiality and professionalism</li>
+          <li>Familiarity with MS Office / Google Workspace tools</li>
+          <li>Basic understanding of HR concepts and processes</li>
+        </ul>
+
+        <h5 style={{ color: "white" }}>Preferred (Not Mandatory)</h5>
+        <ul style={{ color: "white" }}>
+          <li>Exposure to HR tools or applicant tracking systems</li>
+          <li>Basic knowledge of labor laws and compliance</li>
+          <li>Experience with recruitment platforms such as LinkedIn</li>
+          <li>Understanding of performance management concepts</li>
+        </ul>
+
+        <h5 style={{ color: "white" }}>What You Will Gain</h5>
+        <ul style={{ color: "white" }}>
+          <li>Paid internship with real HR and people operations experience</li>
+          <li>Hands-on exposure to live recruitment and onboarding processes</li>
+          <li>Experience working in a fast-growing startup environment</li>
+          <li>Mentorship from experienced HR and leadership professionals</li>
+          <li>Internship certificate and Letter of Recommendation upon successful completion</li>
+          <li>Opportunity for future full-time or extended roles based on business requirements</li>
+        </ul>
+
+        <h5 style={{ color: "white" }}>Application Process</h5>
+        <ol style={{ color: "white" }}>
+          <li>Online application submission</li>
+          <li>HR screening or short task</li>
+          <li>Virtual interview</li>
+          <li>Offer confirmation and onboarding</li>
+        </ol>
+      </div>
+    )
+  },
+  {
+    id: 11,
+    title: "SAP Intern",
+    description: "Work with SAP ERP modules and support enterprise business process implementations.",
+    fullDescription: (
+      <div className="internship-container">
+        <p style={{ color: "white" }}><strong>Company:</strong> LVC Solutions</p>
+        <p style={{ color: "white" }}><strong>Location:</strong> Remote (India)</p>
+        <p style={{ color: "white" }}><strong>Internship Type:</strong> Paid Summer Internship</p>
+        <p style={{ color: "white" }}><strong>Duration:</strong> 12 Weeks</p>
+        <p style={{ color: "white" }}><strong>Start Date:</strong> May / June 2026</p>
+        <p style={{ color: "white" }}><strong>Stipend:</strong> Paid (Monthly)</p>
+
+        <h5 style={{ color: "white" }}>About LVC Solutions</h5>
+        <p style={{ color: "white" }}>
+          LVC Solutions is a technology company building AI-driven software and enterprise solutions
+          across recruitment, analytics, and business automation. We work with modern enterprise
+          platforms including SAP to streamline business processes and deliver efficient, scalable
+          solutions for our clients and products. Our internship program provides students with practical
+          exposure to real SAP implementations and enterprise software workflows.
+        </p>
+
+        <h5 style={{ color: "white" }}>Role Overview</h5>
+        <p style={{ color: "white" }}>
+          As a SAP Intern, you will support the implementation, configuration, and testing of SAP
+          modules used in business operations. You will work alongside experienced SAP consultants and
+          business analysts to understand enterprise workflows and gain practical experience with SAP
+          ERP systems in a real project environment. This is a paid internship designed for students
+          who want hands-on SAP experience within a technology and consulting environment.
+        </p>
+
+        <h5 style={{ color: "white" }}>Roles and Responsibilities</h5>
+
+        <h5 style={{ color: "white" }}>SAP Module Support</h5>
+        <ul style={{ color: "white" }}>
+          <li>Assist in configuration and setup of SAP modules (SD, MM, FI, HR, or others as applicable).</li>
+          <li>Support business process mapping and documentation within SAP.</li>
+          <li>Participate in SAP data migration and master data management activities.</li>
+        </ul>
+
+        <h5 style={{ color: "white" }}>Testing and Quality Assurance</h5>
+        <ul style={{ color: "white" }}>
+          <li>Execute unit testing and integration testing for SAP configurations.</li>
+          <li>Document test results and assist in resolving identified issues.</li>
+          <li>Support user acceptance testing (UAT) activities.</li>
+        </ul>
+
+        <h5 style={{ color: "white" }}>Business Process Analysis</h5>
+        <ul style={{ color: "white" }}>
+          <li>Understand and document current business processes and map them to SAP workflows.</li>
+          <li>Assist in identifying process gaps and propose system-level improvements.</li>
+          <li>Support preparation of functional specifications and process documentation.</li>
+        </ul>
+
+        <h5 style={{ color: "white" }}>Collaboration and Reporting</h5>
+        <ul style={{ color: "white" }}>
+          <li>Work closely with SAP consultants, functional leads, and business teams.</li>
+          <li>Participate in project meetings, sprint reviews, and status updates.</li>
+          <li>Maintain clear documentation of configurations and testing activities.</li>
+        </ul>
+
+        <h5 style={{ color: "white" }}>Eligibility Criteria</h5>
+        <ul style={{ color: "white" }}>
+          <li>B.Tech / BCA / MCA / MBA / B.Com students from relevant disciplines</li>
+          <li>Eligible years: 2nd year, 3rd year, and final year</li>
+          <li>Interest in enterprise software, ERP systems, and business processes</li>
+          <li>Ability to commit 40 hours per week during the internship period</li>
+        </ul>
+
+        <h5 style={{ color: "white" }}>Required Skills</h5>
+        <ul style={{ color: "white" }}>
+          <li>Basic understanding of ERP concepts and business processes</li>
+          <li>Good analytical and problem-solving skills</li>
+          <li>Strong documentation and communication skills</li>
+          <li>Familiarity with MS Office / Google Workspace tools</li>
+          <li>Ability to understand and follow structured workflows</li>
+        </ul>
+
+        <h5 style={{ color: "white" }}>Preferred (Not Mandatory)</h5>
+        <ul style={{ color: "white" }}>
+          <li>Basic exposure to SAP modules (SD, MM, FI, HCM, or any other)</li>
+          <li>Familiarity with SAP GUI or SAP Fiori</li>
+          <li>Understanding of business process flows in finance, supply chain, or HR</li>
+          <li>Knowledge of SQL or data management basics</li>
+        </ul>
+
+        <h5 style={{ color: "white" }}>What You Will Gain</h5>
+        <ul style={{ color: "white" }}>
+          <li>Paid internship with real SAP and ERP project experience</li>
+          <li>Hands-on exposure to enterprise software implementations</li>
+          <li>Experience working in a structured project and consulting environment</li>
+          <li>Mentorship from experienced SAP consultants and business analysts</li>
+          <li>Internship certificate and Letter of Recommendation upon successful completion</li>
+          <li>Opportunity for future full-time or extended roles based on business requirements</li>
+        </ul>
+
+        <h5 style={{ color: "white" }}>Application Process</h5>
+        <ol style={{ color: "white" }}>
+          <li>Online application submission</li>
+          <li>Technical screening or assignment</li>
+          <li>Virtual interview</li>
+          <li>Offer confirmation and onboarding</li>
+        </ol>
+      </div>
+    )
+  },
+  {
+    id: 12,
+    title: "Salesforce Intern",
+    description: "Build and configure Salesforce CRM solutions to support sales and business operations.",
+    fullDescription: (
+      <div className="internship-container">
+        <p style={{ color: "white" }}><strong>Company:</strong> LVC Solutions</p>
+        <p style={{ color: "white" }}><strong>Location:</strong> Remote (India)</p>
+        <p style={{ color: "white" }}><strong>Internship Type:</strong> Paid Summer Internship</p>
+        <p style={{ color: "white" }}><strong>Duration:</strong> 12 Weeks</p>
+        <p style={{ color: "white" }}><strong>Start Date:</strong> May / June 2026</p>
+        <p style={{ color: "white" }}><strong>Stipend:</strong> Paid (Monthly)</p>
+
+        <h5 style={{ color: "white" }}>About LVC Solutions</h5>
+        <p style={{ color: "white" }}>
+          LVC Solutions is a technology company focused on building AI-powered platforms and business
+          solutions across recruitment, analytics, and CRM automation. We leverage Salesforce to manage
+          client relationships, automate sales workflows, and deliver data-driven business outcomes.
+          Our internship program offers students practical exposure to real Salesforce implementations
+          and CRM development within a live startup environment.
+        </p>
+
+        <h5 style={{ color: "white" }}>Role Overview</h5>
+        <p style={{ color: "white" }}>
+          As a Salesforce Intern, you will support the development, configuration, and administration
+          of Salesforce CRM solutions. You will work with the technical and business teams to build
+          custom features, automate workflows, and optimize Salesforce to meet real business requirements.
+          This is a paid internship designed for students who want hands-on Salesforce experience
+          within a technology startup environment.
+        </p>
+
+        <h5 style={{ color: "white" }}>Roles and Responsibilities</h5>
+
+        <h5 style={{ color: "white" }}>Salesforce Configuration and Development</h5>
+        <ul style={{ color: "white" }}>
+          <li>Assist in configuring Salesforce objects, fields, layouts, and workflows.</li>
+          <li>Support development of custom components using Apex, Visualforce, or Lightning Web Components (LWC).</li>
+          <li>Build and manage automation using Process Builder, Flows, or Workflow Rules.</li>
+          <li>Assist in writing and testing Apex triggers and classes.</li>
+        </ul>
+
+        <h5 style={{ color: "white" }}>CRM Administration</h5>
+        <ul style={{ color: "white" }}>
+          <li>Support Salesforce org administration including user management and profiles.</li>
+          <li>Assist in managing security settings, permission sets, and roles.</li>
+          <li>Maintain data quality through imports, deduplication, and validation rules.</li>
+        </ul>
+
+        <h5 style={{ color: "white" }}>Reporting and Analytics</h5>
+        <ul style={{ color: "white" }}>
+          <li>Create and maintain Salesforce reports and dashboards for business teams.</li>
+          <li>Analyze CRM data to provide actionable insights.</li>
+          <li>Assist in tracking sales pipeline and key performance metrics.</li>
+        </ul>
+
+        <h5 style={{ color: "white" }}>Integration and Testing</h5>
+        <ul style={{ color: "white" }}>
+          <li>Assist in integrating Salesforce with third-party tools and APIs.</li>
+          <li>Support unit testing and user acceptance testing (UAT) for new features.</li>
+          <li>Document configurations, test cases, and deployment activities.</li>
+        </ul>
+
+        <h5 style={{ color: "white" }}>Eligibility Criteria</h5>
+        <ul style={{ color: "white" }}>
+          <li>B.Tech / BCA / MCA / MBA students from Computer Science, IT, or related disciplines</li>
+          <li>Eligible years: 2nd year, 3rd year, and final year</li>
+          <li>Strong interest in CRM platforms, cloud technology, and business automation</li>
+          <li>Ability to commit 40 hours per week during the internship period</li>
+        </ul>
+
+        <h5 style={{ color: "white" }}>Required Skills</h5>
+        <ul style={{ color: "white" }}>
+          <li>Basic understanding of CRM concepts and Salesforce platform</li>
+          <li>Familiarity with JavaScript or any object-oriented programming language</li>
+          <li>Good analytical and problem-solving skills</li>
+          <li>Strong communication and documentation skills</li>
+          <li>Ability to learn new tools and technologies quickly</li>
+        </ul>
+
+        <h5 style={{ color: "white" }}>Preferred (Not Mandatory)</h5>
+        <ul style={{ color: "white" }}>
+          <li>Exposure to Salesforce Admin or Developer certifications</li>
+          <li>Familiarity with Apex, LWC, or Visualforce</li>
+          <li>Basic understanding of SOQL (Salesforce Object Query Language)</li>
+          <li>Experience with Salesforce Trailhead learning modules</li>
+        </ul>
+
+        <h5 style={{ color: "white" }}>What You Will Gain</h5>
+        <ul style={{ color: "white" }}>
+          <li>Paid internship with real Salesforce CRM development experience</li>
+          <li>Hands-on exposure to live Salesforce configurations and automation</li>
+          <li>Experience working on real business workflows and CRM solutions</li>
+          <li>Mentorship from experienced Salesforce developers and consultants</li>
+          <li>Internship certificate and Letter of Recommendation upon successful completion</li>
+          <li>Opportunity for future full-time or extended roles based on business requirements</li>
+        </ul>
+
+        <h5 style={{ color: "white" }}>Application Process</h5>
+        <ol style={{ color: "white" }}>
+          <li>Online application submission</li>
+          <li>Technical screening or assignment</li>
+          <li>Virtual interview</li>
+          <li>Offer confirmation and onboarding</li>
+        </ol>
+      </div>
+    )
   }
 ];
 
