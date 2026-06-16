@@ -1072,7 +1072,110 @@ const internshipData = [
     </div>
     )
   },
+  {
+    id: 9,
+    title: "QA Engineer Intern",
+    description: "Ensure the quality, reliability, and performance of web applications.",
+    // link: "/careers-intern/qa-engineerasdfas",
+    fullDescription: (
+      <div className="internship-container">
+      <p style={{ color: "white" }}><strong>Company:</strong> LVC Solutions</p>
+      <p style={{ color: "white" }}><strong>Location:</strong> Remote (India)</p>
+      <p style={{ color: "white" }}><strong>Internship Type:</strong> Paid Summer Internship</p>
+      <p style={{ color: "white" }}><strong>Duration:</strong> 8 Weeks</p>
+      <p style={{ color: "white" }}><strong>Start Date:</strong> May / June 2026</p>
+      <p style={{ color: "white" }}><strong>Stipend:</strong> Paid (Monthly)</p>
 
+      <h5 style={{ color: "white" }}>About LVC Solutions</h5>
+      <p style={{ color: "white" }}>
+        LVC Solutions is a technology-driven company building scalable software and AI-powered platforms across recruitment, analytics, and automation. We focus on delivering high-quality, productionready applications that solve real-world problems. Our internship program provides students with practical exposure to industry-standard software development and quality assurance practices by working on live projects.
+      </p>
+
+      <h5 style={{ color: "white" }}>Role Overview</h5>
+      <p style={{ color: "white" }}>
+        As a QA Engineer Intern, you will be responsible for ensuring the quality, reliability, and performance of web applications developed by LVC Solutions. You will work closely with developers, product managers, and designers to identify defects, validate features, and improve overall product quality. This is a paid internship designed for students who want hands-on experience in software testing and quality assurance within a real startup environment.
+      </p>
+
+      <h5 style={{ color: "white" }}>Roles and Responsibilities</h5>
+
+      <h5 style={{ color: "white" }}>Manual Testing</h5>
+      <ul style={{ color: "white" }}>
+        <li>Understand product requirements, workflows, and user stories</li>
+        <li>Create and execute test cases, test scenarios, and test plans</li>
+        <li>Perform functional, regression, integration, and smoke testing</li>
+        <li>Identify, document, and track defects using bug tracking tools</li>
+        <li>Validate fixes and ensure issues are resolved correctly</li>
+      </ul>
+
+      <h5 style={{ color: "white" }}>Test Analysis and Documentation</h5>
+      <ul style={{ color: "white" }}>
+        <li>Review requirement documents and UI designs to identify test scenarios</li>
+        <li>Prepare detailed test reports and quality metrics</li>
+        <li>Maintain clear and structured test documentation</li>
+        <li>Ensure test coverage for new features and enhancements</li>
+      </ul>
+
+      <h5 style={{ color: "white" }}>Collaboration and Agile Testing</h5>
+      <ul style={{ color: "white" }}>
+        <li>Work closely with developers to reproduce and resolve defects</li>
+        <li>Participate in sprint planning, stand-ups, and sprint reviews</li>
+        <li>Provide feedback on usability, edge cases, and risk areas</li>
+        <li>Support continuous improvement of QA processes</li>
+      </ul>
+
+      <h5 style={{ color: "white" }}>Automation Testing (Exposure)</h5>
+      <ul style={{ color: "white" }}>
+        <li>Assist in writing basic automation test scripts (if applicable)</li>
+        <li>Learn and work with automation tools and frameworks</li>
+        <li>Execute automated test cases and analyze results</li>
+      </ul>
+
+      <h5 style={{ color: "white" }}>Eligibility Criteria</h5>
+      <ul style={{ color: "white" }}>
+        <li>B.Tech students from Computer Science, IT, or related branches</li>
+        <li>Eligible years: 2nd year, 3rd year, and final year students</li>
+        <li>Interest in software testing and quality assurance</li>
+        <li>Ability to understand application workflows and business logic</li>
+        <li>Commitment of 40 hours per week during the internship period</li>
+      </ul>
+
+      <h5 style={{ color: "white" }}>Required Skills</h5>
+      <ul style={{ color: "white" }}>
+        <li>Basic understanding of software testing concepts and SDLC</li>
+        <li>Knowledge of manual testing techniques</li>
+        <li>Ability to write clear and detailed test cases</li>
+        <li>Familiarity with web applications and APIs</li>
+        <li>Basic knowledge of bug tracking tools</li>
+        <li>Good analytical and communication skills</li>
+      </ul>
+
+      <h5 style={{ color: "white" }}>Preferred (Not Mandatory)</h5>
+      <ul style={{ color: "white" }}>
+        <li>Exposure to automation tools such as Selenium, Playwright, or Cypress</li>
+        <li>Basic understanding of SQL or database testing</li>
+        <li>Knowledge of Agile or Scrum methodology</li>
+      </ul>
+
+      <h5 style={{ color: "white" }}>What You Will Gain</h5>
+      <ul style={{ color: "white" }}>
+        <li>Paid internship with real project testing experience</li>
+        <li>Hands-on exposure to QA processes in a startup environment</li>
+        <li>Experience working on live production applications</li>
+        <li>Mentorship from experienced QA and engineering teams</li>
+        <li>Internship certificate and Letter of Recommendation upon successful completion</li>
+        <li>Opportunity for future full-time or extended roles based on business requirements</li>
+      </ul>
+
+      <h5 style={{ color: "white" }}>Application Process</h5>
+      <ol style={{ color: "white" }}>
+        <li>Online application submission</li>
+        <li>Short screening or testing assignment</li>
+        <li>Virtual interview</li>
+        <li>Offer confirmation and onboarding</li>
+      </ol>
+    </div>
+    )
+  }
 ];
 
 const CareersIntern = () => {
@@ -1097,7 +1200,7 @@ const CareersIntern = () => {
   return (
     <>
     <div style={{ marginTop: "120px", padding: "0 40px 20px 40px" }}>
-      <div className="d-flex gap-4 flex-wrap justify-content-center">
+      <div className="d-flex gap-4 flex-wrap justify-content-start">
         {internshipData.map((item) => (
           <InternshipCard
             key={item.id}
