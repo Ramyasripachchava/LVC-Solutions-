@@ -1076,7 +1076,7 @@ const internshipData = [
     id: 9,
     title: "QA Engineer Intern",
     description: "Ensure the quality, reliability, and performance of web applications.",
-    // link: "/careers-intern/qa-engineer",
+    // link: "/careers-intern/qa-engineerasdfas",
     fullDescription: (
       <div className="internship-container">
       <p style={{ color: "white" }}><strong>Company:</strong> LVC Solutions</p>
