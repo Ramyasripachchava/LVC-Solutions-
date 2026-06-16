@@ -44,6 +44,10 @@ const InternForm = () => {
     "DevOps Intern",
     "Full Stack Intern",
     "Mobile App Developer Intern",
+    "QA Engineer Intern",
+    "HR Intern",
+    "SAP Intern",
+    "Salesforce Intern",
   ];
 
   const handleChange = (e) => {
