@@ -24,7 +24,7 @@ const AboutUs = () => {
   );
  
 
-  // Function to generate a random color
+  // Function to generate a random colorjjjjj
   // const getRandomColor = () => {
   //   const letters = "0123456789ABCDEF";
   //   let color = "#";
