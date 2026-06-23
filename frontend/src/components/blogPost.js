@@ -27,7 +27,8 @@ function BlogArticle() {
     // console.log(sec)
 
     return (
-        <div className='blog-post-container bg-white'>
+        // <div className='blog-post-container bg-white'>
+         <div className='blog-post-container bg-black'>
             {post ? (
                 <div >
                     {/* <div className='blog-section-herobanner' style={{backgroundImage:`url(${image.src}`}}>
@@ -43,13 +44,18 @@ function BlogArticle() {
                     <div className='blog-post-img-container'>
                         <img className='blog-post-img' alt={image.alt} src={image.src} />
                     </div>
-                    <div className='blog-post-headings'>
+                    <div className='blog-post-headings' style={{color: '#fff'}}>
                         <h2>{post.title}</h2>
                         <p>{post.date}</p>
                     </div>
 
                     <div className='blog-post-content'>
-                        <p style={{ color: '#232323ff' }}>{post.content}</p>
+                        {/* <p style={{ color: '#232323ff' }}>{post.content}</p> */}
+                        {/* <p style={{ color: '#fff' }}>{post.content}</p> */}
+                        <div
+  style={{ color: '#fff', lineHeight: '1.9' }}
+  dangerouslySetInnerHTML={{ __html: post.content }}
+/>
                     </div>
                 </div>
 
