@@ -1,103 +1,148 @@
 import Footer from './footer'
 import '../style.css'
 import { useState } from 'react';
-import { Link } from 'react-router-dom'
-
+import { Link } from 'react-router-dom';
+import '../styles/blogstyles.css';
 function BlogPage() {
   // example blog posts
 
   const posts = [
     {
       id: 1,
-      title: "Welcome to LVC Solutions Blog",
-      date: "August 27, 2025",
-      content:
-        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,'
-    },
+      // title: "Welcome to LVC Solutions Blog",
+       title: "Welcome to LVC Solutions Blog",
+      date: "June 06, 2026",
+      // content:
+      //   "LVC Solutions is a technology-driven company specializing in Artificial Intelligence, Generative AI, Software Development, Cloud Solutions, Digital Transformation, and Business Innovation. We help organizations, startups, educational institutions, and professionals leverage technology to achieve sustainable growth and long-term success. In today,s rapidly evolving digital landscape, businesses require more than software solutions. They need strategic technology partners who understand their challenges, identify opportunities, and deliver scalable solutions that drive measurable outcomes. At LVC Solutions, we combine technical expertise, industry knowledge, and innovation to help organizations navigate digital transformation with confidence. Our services span custom software development, enterprise applications, AI-powered solutions, cloud engineering, automation, data analytics, product development, and technology consulting. By leveraging modern technologies and industry best practices, we build reliable, secure, and scalable solutions tailored to the unique needs of every client. Beyond technology services, LVC Solutions is committed to creating opportunities and building ecosystems that support career development, workforce transformation, entrepreneurship, and business growth. Through our platforms and initiatives, we connect students, professionals, universities, employers, startups, investors, and advisors to foster meaningful collaboration and innovation. Our growing ecosystem includes: LVC Fair Job A verified hiring and talent platform designed to improve trust, transparency, and efficiency in recruitment. By reducing fraudulent profiles, fake recruiters, and unverified organizations, LVC Fair Job creates a secure environment where employers and job seekers can connect with confidence. LVC Academy A career-focused learning and development platform that provides practical training, industry mentorship, internship opportunities, and hands-on project experience across emerging technologies and business disciplines. LVC Spotlight Media A digital media and branding division that helps businesses, startups, and professionals strengthen their online presence through strategic content creation, digital marketing, public relations, and brand storytelling. LVC Venture OS A startup support ecosystem designed to empower founders, investors, and advisors through mentorship, business guidance, networking opportunities, fundraising support, operational resources, and growth-focused services. At the heart of everything we do is a commitment to innovation, excellence, and impact. We believe technology should not only solve business problems but also create opportunities, accelerate growth, and improve outcomes for individuals and organizations alike. Our vision is to build a global ecosystem where technology, talent, entrepreneurship, and innovation converge to create lasting value. By empowering businesses, supporting emerging talent, and enabling startups to scale, we are helping shape the future of work, business, and digital transformation. Whether you are seeking advanced technology solutions, exploring career opportunities, building a startup, or looking to transform your organization through innovation, LVC Solutions is ready to help you achieve your goals. Partner with LVC Solutions and discover how technology, talent, and innovation can drive your next stage of growth."
+      content: `
+
+<h3>Transforming Businesses Through Technology, AI, Talent, and Innovation</h3>
+
+<p>LVC Solutions is a technology-driven company specializing in Artificial Intelligence, Generative AI, Software Development, Cloud Solutions, Digital Transformation, and Business Innovation. We help organizations, startups, educational institutions, and professionals leverage technology to achieve sustainable growth and long-term success.</p>
+
+<p>In today’s rapidly evolving digital landscape, businesses require more than software solutions. They need strategic technology partners who understand their challenges, identify opportunities, and deliver scalable solutions that drive measurable outcomes. At LVC Solutions, we combine technical expertise, industry knowledge, and innovation to help organizations navigate digital transformation with confidence.</p>
+
+<p>Our services span custom software development, enterprise applications, AI-powered solutions, cloud engineering, automation, data analytics, product development, and technology consulting. By leveraging modern technologies and industry best practices, we build reliable, secure, and scalable solutions tailored to the unique needs of every client.</p>
+
+<p>Beyond technology services, LVC Solutions is committed to creating opportunities and building ecosystems that support career development, workforce transformation, entrepreneurship, and business growth. Through our platforms and initiatives, we connect students, professionals, universities, employers, startups, investors, and advisors to foster meaningful collaboration and innovation.</p>
+
+<h3>Our Growing Ecosystem</h3>
+
+<h4>LVC Fair Job</h4>
+
+<p>A verified hiring and talent platform designed to improve trust, transparency, and efficiency in recruitment. By reducing fraudulent profiles, fake recruiters, and unverified organizations, LVC Fair Job creates a secure environment where employers and job seekers can connect with confidence.</p>
+
+<h4>LVC Academy</h4>
+
+<p>A career-focused learning and development platform that provides practical training, industry mentorship, internship opportunities, and hands-on project experience across emerging technologies and business disciplines.</p>
+
+<h4>LVC Spotlight Media</h4>
+
+<p>A digital media and branding division that helps businesses, startups, and professionals strengthen their online presence through strategic content creation, digital marketing, public relations, and brand storytelling.</p>
+
+<h4>LVC Venture OS</h4>
+
+<p>A startup support ecosystem designed to empower founders, investors, and advisors through mentorship, business guidance, networking opportunities, fundraising support, operational resources, and growth-focused services.</p>
+
+<h3>Our Commitment</h3>
+
+<p>At the heart of everything we do is a commitment to innovation, excellence, and impact. We believe technology should not only solve business problems but also create opportunities, accelerate growth, and improve outcomes for individuals and organizations alike.</p>
+
+<h3>Our Vision</h3>
+
+<p>Our vision is to build a global ecosystem where technology, talent, entrepreneurship, and innovation converge to create lasting value. By empowering businesses, supporting emerging talent, and enabling startups to scale, we are helping shape the future of work, business, and digital transformation.</p>
+
+<h3>Partner With Us</h3>
+
+<p>Whether you are seeking advanced technology solutions, exploring career opportunities, building a startup, or looking to transform your organization through innovation, LVC Solutions is ready to help you achieve your goals.</p>
+
+<p>Partner with LVC Solutions and discover how technology, talent, and innovation can drive your next stage of growth.</p>
+`
+      },
     {
       id: 2,
       title: "How Technology Helps Businesses Grow",
-      date: "August 20, 2025",
+      date: "June 06, 2026",
       content:
         "From automation to data-driven decisions, technology is transforming businesses. At LVC Solutions, we help companies adapt and thrive."
     },
     {
       id: 3,
       title: "Our Commitment to Clients",
-      date: "August 10, 2025",
+      date: "June 06, 2026",
       content:
         "We believe in building long-term relationships by providing reliable, scalable, and affordable solutions tailored to client needs."
     },
-    {
-      id: 4,
-      title: "Welcome to LVC Solutions Blog",
-      date: "August 27, 2025",
-      content:
-        "At LVC Solutions, we provide innovative technology and business solutions. This blog is where we share updates, tips, and insights."
-    },
-    {
-      id: 5,
-      title: "How Technology Helps Businesses Grow",
-      date: "August 20, 2025",
-      content:
-        "From automation to data-driven decisions, technology is transforming businesses. At LVC Solutions, we help companies adapt and thrive."
-    },
-    {
-      id: 6,
-      title: "Our Commitment to Clients",
-      date: "August 10, 2025",
-      content:
-        "We believe in building long-term relationships by providing reliable, scalable, and affordable solutions tailored to client needs."
-    },
-    {
-      id: 7,
-      title: "Welcome to LVC Solutions Blog",
-      date: "August 27, 2025",
-      content:
-        "At LVC Solutions, we provide innovative technology and business solutions. This blog is where we share updates, tips, and insights."
-    },
-    {
-      id: 8,
-      title: "How Technology Helps Businesses Grow",
-      date: "August 20, 2025",
-      content:
-        "From automation to data-driven decisions, technology is transforming businesses. At LVC Solutions, we help companies adapt and thrive."
-    },
-    {
-      id: 9,
-      title: "Our Commitment to Clients",
-      date: "August 10, 2025",
-      content:
-        "We believe in building long-term relationships by providing reliable, scalable, and affordable solutions tailored to client needs."
-    },
-    {
-      id: 10,
-      title: "Welcome to LVC Solutions Blog",
-      date: "August 27, 2025",
-      content:
-        "At LVC Solutions, we provide innovative technology and business solutions. This blog is where we share updates, tips, and insights."
-    },
-    {
-      id: 11,
-      title: "How Technology Helps Businesses Grow",
-      date: "August 20, 2025",
-      content:
-        "From automation to data-driven decisions, technology is transforming businesses. At LVC Solutions, we help companies adapt and thrive."
-    },
-    {
-      id: 12,
-      title: "Our Commitment to Clients",
-      date: "August 10, 2025",
-      content:
-        "We believe in building long-term relationships by providing reliable, scalable, and affordable solutions tailored to client needs."
-    },
-    {
-      id: 13,
-      title: "Our Commitment to Clients",
-      date: "August 10, 2025",
-      content:
-        "We believe in building long-term relationships by providing reliable, scalable, and affordable solutions tailored to client needs."
-    }
+    // {
+    //   id: 4,
+    //   title: "Welcome to LVC Solutions Blog",
+    //   date: "August 27, 2025",
+    //   content:
+    //     "At LVC Solutions, we provide innovative technology and business solutions. This blog is where we share updates, tips, and insights."
+    // },
+    // {
+    //   id: 5,
+    //   title: "How Technology Helps Businesses Grow",
+    //   date: "August 20, 2025",
+    //   content:
+    //     "From automation to data-driven decisions, technology is transforming businesses. At LVC Solutions, we help companies adapt and thrive."
+    // },
+    // {
+    //   id: 6,
+    //   title: "Our Commitment to Clients",
+    //   date: "August 10, 2025",
+    //   content:
+    //     "We believe in building long-term relationships by providing reliable, scalable, and affordable solutions tailored to client needs."
+    // },
+    // {
+    //   id: 7,
+    //   title: "Welcome to LVC Solutions Blog",
+    //   date: "August 27, 2025",
+    //   content:
+    //     "At LVC Solutions, we provide innovative technology and business solutions. This blog is where we share updates, tips, and insights."
+    // },
+    // {
+    //   id: 8,
+    //   title: "How Technology Helps Businesses Grow",
+    //   date: "August 20, 2025",
+    //   content:
+    //     "From automation to data-driven decisions, technology is transforming businesses. At LVC Solutions, we help companies adapt and thrive."
+    // },
+    // {
+    //   id: 9,
+    //   title: "Our Commitment to Clients",
+    //   date: "August 10, 2025",
+    //   content:
+    //     "We believe in building long-term relationships by providing reliable, scalable, and affordable solutions tailored to client needs."
+    // },
+    // {
+    //   id: 10,
+    //   title: "Welcome to LVC Solutions Blog",
+    //   date: "August 27, 2025",
+    //   content:
+    //     "At LVC Solutions, we provide innovative technology and business solutions. This blog is where we share updates, tips, and insights."
+    // },
+    // {
+    //   id: 11,
+    //   title: "How Technology Helps Businesses Grow",
+    //   date: "August 20, 2025",
+    //   content:
+    //     "From automation to data-driven decisions, technology is transforming businesses. At LVC Solutions, we help companies adapt and thrive."
+    // },
+    // {
+    //   id: 12,
+    //   title: "Our Commitment to Clients",
+    //   date: "August 10, 2025",
+    //   content:
+    //     "We believe in building long-term relationships by providing reliable, scalable, and affordable solutions tailored to client needs."
+    // },
+    // {
+    //   id: 13,
+    //   title: "Our Commitment to Clients",
+    //   date: "August 10, 2025",
+    //   content:
+    //     "We believe in building long-term relationships by providing reliable, scalable, and affordable solutions tailored to client needs."
+    // }
   ];
   //images
 
@@ -224,11 +269,22 @@ function BlogPage() {
                 <img className='blog-posts-imgs' src={images[post.id - 1].src} alt={images[post.id - 1].alt} />
                 <h2 className='text-white'>{post.title}</h2>
                 <small className='text-white  blog-date'>{post.date}</small>
-                {post.content.length > 110 ? (
+                {/* {post.content.length > 110 ? (
                   <p className='blog-desc'>{post.content.slice(0,110)}... <br/><b style={{color:'light black'}}>Read more</b></p>
                 ) : (
                   <p className='blog-desc'>{post.content}</p>
-                )}
+                )} */}
+                {post.content.length > 110 ? (
+  <p className='blog-desc'>
+    {post.content.replace(/<[^>]*>/g, '').slice(0, 110)}...
+    <br />
+    <b>Read more</b>
+  </p>
+) : (
+  <p className='blog-desc'>
+    {post.content.replace(/<[^>]*>/g, '')}
+  </p>
+)}
               </Link>
             </article>
           ))}
