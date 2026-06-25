@@ -92,8 +92,75 @@ const getFulltimeResume = async (req, res) => {
   }
 };
 
+const submitFulltimeApplication = async (req, res) => {
+  try {
+    const {
+      firstName,
+      lastName,
+      phone,
+      email,
+      dob,
+      citizenship,
+      country,
+      address,
+      city,
+      state,
+      resume,
+      skills,
+      desiredJobTitle,
+      education,
+      workExperience,
+    } = req.body;
+
+    // 1. Prepare payload for Google Apps Script Web App
+    const scriptPayload = {
+      secret: process.env.SCRIPT_SECRET,
+      firstName,
+      lastName,
+      phone,
+      email,
+      dob,
+      citizenship,
+      country,
+      address,
+      city,
+      state,
+      resume,
+      skills,
+      desiredJobTitle,
+      education,
+      workExperience,
+    };
+
+    // 2. Post to Google Apps Script
+    if (!process.env.FULLTIME_SCRIPT_URL) {
+      console.error("FULLTIME_SCRIPT_URL is not set in backend environment variables.");
+      return res.status(500).json({ message: "Server configuration error: script URL missing." });
+    }
+
+    const scriptResponse = await fetch(process.env.FULLTIME_SCRIPT_URL, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain" },
+      body: JSON.stringify(scriptPayload),
+    });
+
+    if (!scriptResponse.ok) {
+      const errorText = await scriptResponse.text();
+      throw new Error(`Google Apps Script responded with status ${scriptResponse.status}: ${errorText}`);
+    }
+
+    return res.status(201).json({
+      message: "Application submitted successfully",
+    });
+  } catch (error) {
+    console.error("Error submitting fulltime application:", error);
+    return res.status(500).json({ message: error.message });
+  }
+};
+
 export {
   createFulltimeApplication,
   getAllFulltimeApplications,
   getFulltimeResume,
+  submitFulltimeApplication,
 };

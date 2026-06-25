@@ -8,8 +8,7 @@ const InternForm = () => {
   const [loading, setLoading] = useState(false);
   const [showPaymentModal, setShowPaymentModal] = useState(false);
 
-  const SCRIPT_URL = process.env.REACT_APP_INTERN_SCRIPT_URL;
-  const SCRIPT_SECRET = process.env.REACT_APP_SCRIPT_SECRET;
+  const SUBMIT_URL = `${process.env.REACT_APP_BASE_URL || ""}/api/applications/submit-intern`;
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -145,7 +144,6 @@ const InternForm = () => {
     setLoading(true);
     try {
       const payload = {
-        secret: SCRIPT_SECRET,
         name: formData.fullName,
         email: formData.email,
         phone: formData.phone,
@@ -161,13 +159,16 @@ const InternForm = () => {
         country: formData.country,
         state: formData.state,
         city: formData.city,
+        pinCode: formData.pinCode,
       };
-      await fetch(SCRIPT_URL, {
+      const response = await fetch(SUBMIT_URL, {
         method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "text/plain" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
+      if (!response.ok) {
+        throw new Error("Server responded with an error status");
+      }
       setStep(4);
     } catch (error) {
       console.error("Error:", error);

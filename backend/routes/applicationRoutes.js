@@ -4,6 +4,7 @@ import {
   createApplication,
   getAllApplications,
   getResume,
+  submitInternApplication,
 } from "../controllers/applicationControllers.js";
 
 const router = express.Router();
@@ -22,6 +23,7 @@ const upload = multer({
 });
 
 router.post("/add", upload.single("resume"), createApplication);
+router.post("/submit-intern", submitInternApplication);
 router.get("/get", getAllApplications);
 router.get("/resume/:id", getResume);
 

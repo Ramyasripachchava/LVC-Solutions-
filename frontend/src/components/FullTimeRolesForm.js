@@ -29,8 +29,7 @@ const Textarea = memo((props) => (
   <textarea className="msf-textarea" {...props} />
 ));
 
-const SCRIPT_URL = process.env.REACT_APP_FULLTIME_SCRIPT_URL;
-const SCRIPT_SECRET = process.env.REACT_APP_SCRIPT_SECRET;
+const SUBMIT_URL = `${process.env.REACT_APP_BASE_URL || ""}/api/fulltime-applications/submit-fulltime`;
 
 const FullTimeRolesForm = () => {
   const TOTAL = 4;
@@ -111,7 +110,6 @@ const FullTimeRolesForm = () => {
     try {
       // Flatten data for easier spreadsheet storage
       const payload = {
-        secret: SCRIPT_SECRET,
         firstName: p1.firstName,
         lastName: p1.lastName,
         phone: p1.phone,
@@ -129,14 +127,17 @@ const FullTimeRolesForm = () => {
         workExperience: JSON.stringify(workEntries),
       };
 
-      await fetch(SCRIPT_URL, {
+      const response = await fetch(SUBMIT_URL, {
         method: "POST",
-        mode: "no-cors",
         headers: {
-          "Content-Type": "text/plain",
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(payload),
       });
+
+      if (!response.ok) {
+        throw new Error("Server responded with an error status");
+      }
 
       setStep(5);
     } catch (error) {

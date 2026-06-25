@@ -4,6 +4,15 @@ import { GridFSBucket } from "mongodb";
 let gfs;
 
 const db = async () => {
+  if (mongoose.connection.readyState >= 1) {
+    if (!gfs && mongoose.connection.db) {
+      gfs = new GridFSBucket(mongoose.connection.db, {
+        bucketName: "resumes",
+      });
+    }
+    return;
+  }
+
   try {
     const conn = await mongoose.connect(process.env.MONGODB_URI);
 

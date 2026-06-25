@@ -4,6 +4,7 @@ import {
   createFulltimeApplication,
   getAllFulltimeApplications,
   getFulltimeResume,
+  submitFulltimeApplication,
 } from "../controllers/fulltimeApplicationControllers.js";
 
 const router = express.Router();
@@ -22,6 +23,7 @@ const upload = multer({
 });
 
 router.post("/add", upload.single("resume"), createFulltimeApplication);
+router.post("/submit-fulltime", submitFulltimeApplication);
 router.get("/get", getAllFulltimeApplications);
 router.get("/resume/:id", getFulltimeResume);
 

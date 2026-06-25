@@ -65,5 +65,70 @@ const getResume = async (req, res) => {
   }
 };
 
+const submitInternApplication = async (req, res) => {
+  try {
+    const {
+      name,
+      email,
+      phone,
+      degree,
+      universityName,
+      yearOfClass,
+      semester,
+      branch,
+      percentage,
+      internshipRole,
+      resume,
+      portfolio,
+      country,
+      state,
+      city,
+    } = req.body;
 
-export { createApplication, getAllApplications, getResume };
+    // 1. Prepare payload for Google Apps Script Web App
+    const scriptPayload = {
+      secret: process.env.SCRIPT_SECRET,
+      name,
+      email,
+      phone,
+      degree,
+      universityName,
+      yearOfClass,
+      semester,
+      branch,
+      percentage,
+      internshipRole,
+      resume,
+      portfolio,
+      country,
+      state,
+      city,
+    };
+
+    // 2. Post to Google Apps Script
+    if (!process.env.INTERN_SCRIPT_URL) {
+      console.error("INTERN_SCRIPT_URL is not set in backend environment variables.");
+      return res.status(500).json({ message: "Server configuration error: script URL missing." });
+    }
+
+    const scriptResponse = await fetch(process.env.INTERN_SCRIPT_URL, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain" },
+      body: JSON.stringify(scriptPayload),
+    });
+
+    if (!scriptResponse.ok) {
+      const errorText = await scriptResponse.text();
+      throw new Error(`Google Apps Script responded with status ${scriptResponse.status}: ${errorText}`);
+    }
+
+    return res.status(201).json({
+      message: "Application submitted successfully",
+    });
+  } catch (error) {
+    console.error("Error submitting application:", error);
+    return res.status(500).json({ message: error.message });
+  }
+};
+
+export { createApplication, getAllApplications, getResume, submitInternApplication };
