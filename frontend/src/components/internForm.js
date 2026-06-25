@@ -8,7 +8,7 @@ const InternForm = () => {
   const [loading, setLoading] = useState(false);
   const [showPaymentModal, setShowPaymentModal] = useState(false);
 
-  const SUBMIT_URL = `${process.env.REACT_APP_BASE_URL || ""}/api/applications/submit-intern`;
+  const SUBMIT_URL = "/api/submit-intern";
 
   const [formData, setFormData] = useState({
     fullName: "",

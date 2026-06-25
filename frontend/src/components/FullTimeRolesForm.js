@@ -29,7 +29,7 @@ const Textarea = memo((props) => (
   <textarea className="msf-textarea" {...props} />
 ));
 
-const SUBMIT_URL = `${process.env.REACT_APP_BASE_URL || ""}/api/fulltime-applications/submit-fulltime`;
+const SUBMIT_URL = "/api/submit-fulltime";
 
 const FullTimeRolesForm = () => {
   const TOTAL = 4;
