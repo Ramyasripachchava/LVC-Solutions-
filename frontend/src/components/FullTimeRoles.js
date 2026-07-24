@@ -16,7 +16,6 @@ const internImages = [
   intern6,
 ];
 
-
 const InternshipCard = ({ title, description, fullDescription, image, onApplyClick }) => {
 
   return (
