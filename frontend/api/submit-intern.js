@@ -1,5 +1,5 @@
 module.exports = async function handler(req, res) {
-  // Only allow POST
+  // Only allow POSTgjhj
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method not allowed" });
   }
