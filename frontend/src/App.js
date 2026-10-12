@@ -17,13 +17,9 @@ import FullTimeRolesForm from './components/FullTimeRolesForm';
 
 import Products from './components/products';
 import BlogArticle from './components/blogPost';
-
-
-
+import ServiceDetail from './components/serviceDetail';
 
 function App() {
-
-
   return (
     <Router>
       <Header />
@@ -31,6 +27,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Service />} />
+          <Route path="/services/:serviceSlug" element={<ServiceDetail />} />
           <Route path="/about" element={<About />} />
           <Route path="/insight" element={<Insight />} />
           <Route path="/contact" element={<Contact />} />

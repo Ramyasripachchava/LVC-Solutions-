@@ -32,7 +32,7 @@ const bottomCompanies = [
 const sectionStyle = {
   position: "relative",
   width: "100%",
-  overflow: "visible",
+  overflow: "hidden",
   padding: "28px 0",
   backgroundColor: "#050509",
 };
@@ -42,6 +42,7 @@ const washStyle = {
   inset: 0,
   zIndex: -1,
   pointerEvents: "none",
+  overflow: "hidden",
 };
 
 const primaryOverlayStyle = {

@@ -30,9 +30,8 @@ const InternshipCard = ({ title, description, fullDescription, image, onApplyCli
 
   return (
     <div
-      className="card"
+      className="card open-role-card"
       style={{
-        width: "19rem",
         border: "none",
         borderRadius: "18px",
         overflow: "hidden",
@@ -1577,8 +1576,9 @@ const CareersIntern = () => {
   };
   return (
     <>
-    <div style={{ marginTop: "120px", padding: "0 40px 20px 40px" }}>
-      <div className="d-flex gap-4 flex-wrap justify-content-start">
+    <div className="open-roles-section careers-intern-section">
+      <h1 className="role-heading" style={{ color: "white" }}>Open Roles</h1>
+      <div className="open-roles-grid d-flex gap-4 flex-wrap justify-content-center">
         {internshipData.map((item) => (
           <InternshipCard
             key={item.id}

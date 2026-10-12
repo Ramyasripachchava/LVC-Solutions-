@@ -22,7 +22,7 @@ export const quickLink = [
   { name: "About", href: "#WhyDifferentSection" },
   
   { 
-    name: "LVC Sportlight Media", 
+    name: "LVC Spotlight Media", 
     href: "https://lvcspotlightmedia.com/", 
     target: "_blank", 
     rel: "noopener noreferrer" 

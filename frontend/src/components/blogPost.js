@@ -1,79 +1,114 @@
 import { useEffect, useState, useCallback } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-
+import { useLocation, useNavigate, useParams, Link } from "react-router-dom";
+import { getBlogPostById } from "../data/blogsData";
+import Footer from "./footer";
 
 function BlogArticle() {
-    const location = useLocation()
-    const { post, image } = location.state || {}
-    const [sec, setSec] = useState(8)
-    let navigate = useNavigate()
+  const location = useLocation();
+  const { blogId } = useParams();
+  const navigate = useNavigate();
 
-    let redirect = useCallback(() => {
-        navigate('/blog', { replace: true })
-    }, [navigate])
+  const statePost = location.state?.post;
+  const stateImage = location.state?.image;
 
-    useEffect(() => {
-        let timer
-        if (!post) {
-            setTimeout(redirect, 8000)
-            timer = setInterval(() => {
-                setSec(prevSec => prevSec - 1);
-            }, 1000)
-        }
+  // Resolve post either from location.state or from blogsData using blogId
+  const post = statePost || getBlogPostById(blogId);
+  const image = stateImage || post?.image;
 
-        return () => clearInterval(timer)
-    }, [post, redirect])
+  const [sec, setSec] = useState(8);
 
-    // console.log(sec)
+  const redirect = useCallback(() => {
+    navigate("/blog", { replace: true });
+  }, [navigate]);
 
-    return (
-        // <div className='blog-post-container bg-white'>
-         <div className='blog-post-container bg-black'>
-            {post ? (
-                <div >
-                    {/* <div className='blog-section-herobanner' style={{backgroundImage:`url(${image.src}`}}>
-                        <div className='blog-container'>
-                            <div className='blog-content'>
-                                <p className="blog-subtitle">Blog</p>
-                                <hr className="underline" />
-                                <h1 className="blog-title">LVC Solutions Blog</h1>
-                                <h5>Insights, updates, and ideas from our team.</h5>
-                            </div>
-                        </div>
-                    </div> */}
-                    <div className='blog-post-img-container'>
-                        <img className='blog-post-img' alt={image.alt} src={image.src} />
-                    </div>
-                    <div className='blog-post-headings' style={{color: '#fff'}}>
-                        <h2>{post.title}</h2>
-                        <p>{post.date}</p>
-                    </div>
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    if (post) {
+      document.title = `${post.title} | LVC Solutions Blog`;
+    }
+  }, [post]);
 
-                    <div className='blog-post-content'>
-                        {/* <p style={{ color: '#232323ff' }}>{post.content}</p> */}
-                        {/* <p style={{ color: '#fff' }}>{post.content}</p> */}
-                        <div
-  style={{ color: '#fff', lineHeight: '1.9' }}
-  dangerouslySetInnerHTML={{ __html: post.content }}
-/>
-                    </div>
-                </div>
+  useEffect(() => {
+    let timer;
+    if (!post) {
+      const timeout = setTimeout(redirect, 8000);
+      timer = setInterval(() => {
+        setSec((prevSec) => prevSec - 1);
+      }, 1000);
+      return () => {
+        clearTimeout(timeout);
+        clearInterval(timer);
+      };
+    }
+  }, [post, redirect]);
 
-            ) : (
-                <div className='blog-post-error' style={{ backgroundColor: 'black', textAlign: 'center' }}>
-                    <div className='blog-post-error-content'>
-                        <p style={{ color: 'white', fontSize: '1.5vmax' }}>I'm sorry, it seems that there was a problem
-                            <br /> you will be redirected back to the blogs page in
-                            <br /> {sec} {sec === 1 ? <>second</> : <>seconds</>}</p>
-                        <button onClick={redirect} className="btn spotlight-media-button">Redirect Now</button>
-                    </div>
+  return (
+    <div className="blog-post-page bg-black text-white min-vh-100">
+      <div className="blog-post-container bg-black pt-5">
+        {post && image ? (
+          <div className="container py-4">
+            <nav aria-label="breadcrumb" className="mb-4">
+              <ol className="breadcrumb">
+                <li className="breadcrumb-item">
+                  <Link to="/" className="text-secondary text-decoration-none">
+                    Home
+                  </Link>
+                </li>
+                <li className="breadcrumb-item">
+                  <Link to="/blog" className="text-secondary text-decoration-none">
+                    Blog
+                  </Link>
+                </li>
+                <li className="breadcrumb-item active text-info" aria-current="page">
+                  {post.title}
+                </li>
+              </ol>
+            </nav>
 
-                </div>
+            <div className="blog-post-headings text-center mb-4">
+              <h1 className="display-5 fw-bold text-white mb-3">{post.title}</h1>
+              <p className="text-secondary">{post.date}</p>
+            </div>
 
-            )}
-        </div>
-    )
+            <div className="blog-post-img-container mb-5">
+              <img
+                className="blog-post-img w-100"
+                alt={image.alt || post.title}
+                src={image.src}
+              />
+            </div>
+
+            <div className="blog-post-content text-start">
+              <div
+                style={{ color: "#e2e8f0", lineHeight: "1.9" }}
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              />
+
+              <div className="mt-5 pt-4 border-top border-secondary text-center">
+                <Link to="/blog" className="btn btn-outline-light px-4 py-2">
+                  ← Back to All Blogs
+                </Link>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="blog-post-error text-center py-5">
+            <div className="blog-post-error-content container">
+              <p style={{ color: "white", fontSize: "1.3rem" }}>
+                We couldn't find the requested blog article.
+                <br />
+                Redirecting back to the blog in {sec} {sec === 1 ? "second" : "seconds"}...
+              </p>
+              <button onClick={redirect} className="btn btn-primary mt-3">
+                Return to Blog Now
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+      <Footer />
+    </div>
+  );
 }
-
 
 export default BlogArticle;
