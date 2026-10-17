@@ -21,9 +21,8 @@ const InternshipCard = ({ title, description, fullDescription, image, onApplyCli
 
   return (
     <div
-      className="card"
+      className="card open-role-card"
       style={{
-        width: "19rem",
         border: "none",
         borderRadius: "18px",
         overflow: "hidden",
@@ -289,6 +288,50 @@ const internshipData = [
     </div>
     )
   },
+  {
+    id: 7,
+    title: "Digital Marketing Manager / Growth Strategist",
+    description: "Lead client strategies and coordinate digital marketing execution.",
+    fullDescription: (
+      <div className="internship-container">
+        <p style={{ color: "white" }}><strong>Company:</strong> LVC Spotlight Media</p>
+        <p style={{ color: "white" }}><strong>Position:</strong> Digital Marketing Manager / Growth Strategist</p>
+        <p style={{ color: "white" }}><strong>Experience:</strong> 3–5 Years</p>
+        <p style={{ color: "white" }}><strong>Work Mode:</strong> Remote</p>
+        <p style={{ color: "white" }}><strong>Employment Type:</strong> Full-time</p>
+        <p style={{ color: "white" }}><strong>Language Requirement:</strong> Telugu proficiency required</p>
+
+        <h5 style={{ color: "white", marginTop: "16px" }}>About LVC Spotlight Media</h5>
+        <p style={{ color: "white" }}>
+          LVC Spotlight Media is looking for a strategic and execution-focused Digital Marketing Manager / Growth Strategist to lead client strategies and coordinate digital marketing execution.
+        </p>
+
+        <h5 style={{ color: "white" }}>Key Responsibilities</h5>
+        <ul style={{ color: "white" }}>
+          <li>Conduct digital marketing audits and identify growth opportunities</li>
+          <li>Develop customized digital marketing strategies and 30/60/90-day roadmaps</li>
+          <li>Understand client objectives, target audiences, and market positioning</li>
+          <li>Coordinate SEO, social media, content, creative, and paid marketing activities</li>
+          <li>Define campaign KPIs, priorities, and timelines</li>
+          <li>Monitor campaign performance, analyze data, and recommend improvements</li>
+          <li>Conduct competitor and market analysis</li>
+          <li>Coordinate internal marketing specialists and ensure quality deliverables</li>
+          <li>Participate in client meetings and communicate strategic recommendations</li>
+          <li>Monitor account performance and support client retention and business growth</li>
+        </ul>
+
+        <h5 style={{ color: "white" }}>What We’re Looking For</h5>
+        <ul style={{ color: "white" }}>
+          <li>3–5 years of experience in Digital Marketing, Growth Marketing, or Marketing Strategy</li>
+          <li>Strong understanding of SEO, social media, content marketing, and paid advertising</li>
+          <li>Strong strategic thinking, analytical, and problem-solving skills</li>
+          <li>Experience managing multiple campaigns or client accounts</li>
+          <li>Excellent client communication, presentation, and team coordination skills</li>
+          <li>Fluency in Telugu is required, along with good professional communication skills</li>
+        </ul>
+      </div>
+    )
+  },
 ];
 
 const FullTimeRoles = () => {
@@ -312,9 +355,9 @@ const FullTimeRoles = () => {
     };
         return (
             <>
-            <div style={{ marginTop: "30px", padding: "0 40px 20px 40px" }}>
+            <div className="open-roles-section">
             <h1 className="role-heading" style={{ color: "white" }}>Open Roles</h1>
-            <div className="d-flex gap-4 flex-wrap justify-content-center ">
+            <div className="open-roles-grid d-flex gap-4 flex-wrap justify-content-center">
                 {internshipData.map((item) => (
                 <InternshipCard
                     key={item.id}

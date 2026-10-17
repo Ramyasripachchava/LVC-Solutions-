@@ -30,9 +30,8 @@ const InternshipCard = ({ title, description, fullDescription, image, onApplyCli
 
   return (
     <div
-      className="card"
+      className="card open-role-card"
       style={{
-        width: "19rem",
         border: "none",
         borderRadius: "18px",
         overflow: "hidden",
@@ -1495,6 +1494,64 @@ const internshipData = [
         </ol>
       </div>
     )
+  },
+  {
+    id: 13,
+    title: "Digital Marketing / Growth Strategist Intern",
+    description: "Lead client strategies, coordinate digital marketing execution, and drive growth.",
+    fullDescription: (
+      <div className="internship-container">
+        <p style={{ color: "white" }}><strong>Company:</strong> LVC Spotlight Media / LVC Solutions</p>
+        <p style={{ color: "white" }}><strong>Position:</strong> Digital Marketing / Growth Strategist Intern</p>
+        <p style={{ color: "white" }}><strong>Experience:</strong> 1–2 Years</p>
+        <p style={{ color: "white" }}><strong>Work Mode:</strong> Remote</p>
+        <p style={{ color: "white" }}><strong>Internship Type:</strong> Paid Internship</p>
+        <p style={{ color: "white" }}><strong>Duration:</strong> 12 Weeks</p>
+        <p style={{ color: "white" }}><strong>Language Requirement:</strong> Telugu proficiency required</p>
+
+        <h5 style={{ color: "white", marginTop: "16px" }}>About LVC Spotlight Media</h5>
+        <p style={{ color: "white" }}>
+          LVC Spotlight Media is looking for a strategic and execution-focused Digital Marketing / Growth Strategist Intern to assist in leading client strategies and coordinate digital marketing execution.
+        </p>
+
+        <h5 style={{ color: "white" }}>Role Overview</h5>
+        <p style={{ color: "white" }}>
+          As a Digital Marketing / Growth Strategist Intern, you will gain hands-on experience in executing digital marketing audits, crafting 30/60/90-day roadmaps, coordinating SEO, content, and paid marketing campaigns, and monitoring campaign analytics.
+        </p>
+
+        <h5 style={{ color: "white" }}>Key Responsibilities</h5>
+        <ul style={{ color: "white" }}>
+          <li>Conduct digital marketing audits and identify growth opportunities</li>
+          <li>Develop customized digital marketing strategies and 30/60/90-day roadmaps</li>
+          <li>Understand client objectives, target audiences, and market positioning</li>
+          <li>Coordinate SEO, social media, content, creative, and paid marketing activities</li>
+          <li>Define campaign KPIs, priorities, and timelines</li>
+          <li>Monitor campaign performance, analyze data, and recommend improvements</li>
+          <li>Conduct competitor and market analysis</li>
+          <li>Coordinate internal marketing specialists and ensure quality deliverables</li>
+          <li>Participate in client meetings and communicate strategic recommendations</li>
+          <li>Monitor account performance and support client retention and business growth</li>
+        </ul>
+
+        <h5 style={{ color: "white" }}>What We’re Looking For</h5>
+        <ul style={{ color: "white" }}>
+          <li>1–2 years of experience in Digital Marketing, Growth Marketing, or Marketing Strategy</li>
+          <li>Strong understanding of SEO, social media, content marketing, and paid advertising</li>
+          <li>Strong strategic thinking, analytical, and problem-solving skills</li>
+          <li>Experience managing multiple campaigns or client accounts</li>
+          <li>Excellent client communication, presentation, and team coordination skills</li>
+          <li>Fluency in Telugu is required, along with good professional communication skills</li>
+        </ul>
+
+        <h5 style={{ color: "white" }}>Application Process</h5>
+        <ol style={{ color: "white" }}>
+          <li>Online application submission</li>
+          <li>Screening or assignment task</li>
+          <li>Virtual interview</li>
+          <li>Offer confirmation and onboarding</li>
+        </ol>
+      </div>
+    )
   }
 ];
 
@@ -1519,8 +1576,9 @@ const CareersIntern = () => {
   };
   return (
     <>
-    <div style={{ marginTop: "120px", padding: "0 40px 20px 40px" }}>
-      <div className="d-flex gap-4 flex-wrap justify-content-start">
+    <div className="open-roles-section careers-intern-section">
+      <h1 className="role-heading" style={{ color: "white" }}>Open Roles</h1>
+      <div className="open-roles-grid d-flex gap-4 flex-wrap justify-content-center">
         {internshipData.map((item) => (
           <InternshipCard
             key={item.id}

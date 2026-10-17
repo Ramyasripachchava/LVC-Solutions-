@@ -6,8 +6,10 @@ body {
 .form-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-height: 100vh;
+  padding-top: 110px;
+  padding-bottom: 60px;
 }
 
 .form-card {
@@ -17,6 +19,32 @@ body {
   width: 450px;
   color: white;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.intern-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e6edf3;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 20;
+  padding: 0;
+}
+
+.intern-close-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  transform: scale(1.06);
 }
 
 h2 {

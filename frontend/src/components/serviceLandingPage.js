@@ -1,23 +1,17 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Industries from "./industriesWeServe.js";
+import { servicesData } from "../data/servicesData.js";
 import "../styles/transformationStartsHere.css";
 
 const ServiceLandingPage = () => {
-
+  const navigate = useNavigate();
   const [showAllServices] = useState(false);
 
-  const images = [
-    { src: "https://images.pexels.com/photos/34577/pexels-photo.jpg", alt: "E-commerce Development", title: "E-commerce Development" },
-    { src: "https://images.pexels.com/photos/1181474/pexels-photo-1181474.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Website Growth", title: "Website Growth" },
-    { src: "https://images.pexels.com/photos/8867247/pexels-photo-8867247.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Website Maintenance & Support", title: "C & Support" },
-    { src: "https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Website Design", title: "Website Design" },
-    { src: "https://images.pexels.com/photos/8247921/pexels-photo-8247921.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Cybersecurity", title: "Cybersecurity" },
-    { src: "https://media.istockphoto.com/id/532187422/photo/cloud-uploading-from-mobile-phone-for-file-sharing-and-collaboration.jpg?b=1&s=612x612&w=0&k=20&c=yQsLHA-8AmPjbNcwanBAxMKosyt7e4D1rJPEvMvaShg=", alt: "Cloud", title: "Cloud" },
-    { src: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Consulting", title: "Consulting" },
-    { src: "https://images.pexels.com/photos/159888/pexels-photo-159888.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Data & Analytics", title: "Data & Analytics" },
-    { src: "https://images.pexels.com/photos/16629368/pexels-photo-16629368/free-photo-of-webpage-of-chatgpt-a-prototype-ai-chatbot-is-seen-on-the-website-of-openai-on-a-smartphone-examples-capabilities-and-limitations-are-shown.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Artificial Intelligence", title: "Artificial Intelligence" },
-
-  ];
+  const handleServiceClick = (slug) => {
+    navigate(`/services/${slug}`);
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
 
   return (
     <>
@@ -27,30 +21,96 @@ const ServiceLandingPage = () => {
 
       <div className="container py-5">
         <div className="cta-divider section-cta-divider"></div>
-        <h1 className="services-herotitle">Services We Offer</h1>
+        <div className="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+          <h1 className="services-herotitle mb-0">Services We Offer</h1>
+          <button
+            onClick={() => {
+              navigate("/services");
+              window.scrollTo(0, 0);
+            }}
+            className="btn btn-outline-light btn-sm rounded-pill px-3 py-1"
+          >
+            All Services →
+          </button>
+        </div>
 
-        <div className="row">
-          {/* First 6 images */}
-          {images.slice(0, 6).map((img, index) => (
-            <div key={index} className="col-md-4 position-relative image-container">
-              <img className="w-100 custom-image" src={img.src} alt={img.alt} loading="lazy" />
+        <div className="row g-4">
+          {/* First 6 services */}
+          {servicesData.slice(0, 6).map((service, index) => (
+            <div
+              key={service.id || index}
+              className="col-md-4 col-sm-6 position-relative image-container service-card-interactive"
+              role="button"
+              tabIndex={0}
+              aria-label={`View details for ${service.title}`}
+              onClick={() => handleServiceClick(service.slug)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  handleServiceClick(service.slug);
+                }
+              }}
+            >
+              <img
+                className="w-100 custom-image"
+                src={service.src}
+                alt={service.alt || service.title}
+                loading="lazy"
+              />
 
               <div className="overlay-text">
-                <h2 className="industries-we-serve-title-text">{img.title}</h2>
+                <h2 className="industries-we-serve-title-text mb-1">
+                  {service.title}
+                </h2>
+                <p className="service-card-tagline d-none d-lg-block mb-0">
+                  {service.tagline}
+                </p>
+              </div>
+
+              <div className="service-card-action">
+                <span className="service-action-btn">
+                  Explore Service →
+                </span>
               </div>
 
               <div className="gradient-overlay"></div>
             </div>
           ))}
 
-          {/* Remaining images */}
+          {/* Remaining services if enabled */}
           {showAllServices &&
-            images.slice(6).map((img, index) => (
-              <div key={index} className="col-md-4 position-relative image-container">
-                <img className="w-100 custom-image" src={img.src} alt={img.alt} />
+            servicesData.slice(6).map((service, index) => (
+              <div
+                key={service.id || index + 6}
+                className="col-md-4 col-sm-6 position-relative image-container service-card-interactive"
+                role="button"
+                tabIndex={0}
+                aria-label={`View details for ${service.title}`}
+                onClick={() => handleServiceClick(service.slug)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    handleServiceClick(service.slug);
+                  }
+                }}
+              >
+                <img
+                  className="w-100 custom-image"
+                  src={service.src}
+                  alt={service.alt || service.title}
+                />
 
                 <div className="overlay-text">
-                  <h2>{img.title}</h2>
+                  <h2 className="mb-1">{service.title}</h2>
+                  <p className="service-card-tagline d-none d-lg-block mb-0">
+                    {service.tagline}
+                  </p>
+                </div>
+
+                <div className="service-card-action">
+                  <span className="service-action-btn">
+                    Explore Service →
+                  </span>
                 </div>
 
                 <div className="gradient-overlay"></div>

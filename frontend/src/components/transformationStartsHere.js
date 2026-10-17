@@ -51,14 +51,7 @@ const TransformationStartsHere = () => {
           >
             Our Services
           </button>
-
-          <button
-            className="cta-secondary-btn"
-            onClick={() => handleNavigation("/contact")}
-          >
-            Contact Us
-          </button>
-          </div>
+        </div>
         </div>
       
     </section>

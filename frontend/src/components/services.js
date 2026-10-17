@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../style.css';
 import Industries from "./industriesWeServe.js";
 import TransformationStartsHere from './transformationStartsHere.js';
 import Footer from "./footer.js";
+import { servicesData } from "../data/servicesData.js";
 const Home = () => {
+  const navigate = useNavigate();
 
   // Select section "What We Offer"
   const textRef = useRef(null);
@@ -44,19 +46,6 @@ const Home = () => {
     setShowAllServices((prev) => !prev); 
   };
 
-  const images = [
-    { src: "https://images.pexels.com/photos/34577/pexels-photo.jpg", alt: "E-commerce Development", title: "E-commerce Development" },
-    { src: "https://images.pexels.com/photos/1181474/pexels-photo-1181474.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Website Growth", title: "Website Growth" },
-    { src: "https://images.pexels.com/photos/8867247/pexels-photo-8867247.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Website Maintenance and Support", title: "Website Maintenance and Support" },
-    { src: "https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Website Design", title: "Website Design" },
-    { src: "https://images.pexels.com/photos/8247921/pexels-photo-8247921.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Cybersecurity", title: "Cybersecurity" },
-    { src: "https://media.istockphoto.com/id/532187422/photo/cloud-uploading-from-mobile-phone-for-file-sharing-and-collaboration.jpg?b=1&s=612x612&w=0&k=20&c=yQsLHA-8AmPjbNcwanBAxMKosyt7e4D1rJPEvMvaShg=", alt: "Cloud", title: "Cloud" },
-    { src: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Consulting", title: "Consulting" },
-    { src: "https://images.pexels.com/photos/159888/pexels-photo-159888.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Data & Analytics", title: "Data & Analytics" },
-    { src: "https://images.pexels.com/photos/16629368/pexels-photo-16629368/free-photo-of-webpage-of-chatgpt-a-prototype-ai-chatbot-is-seen-on-the-website-of-openai-on-a-smartphone-examples-capabilities-and-limitations-are-shown.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Artificial Intelligence", title: "Artificial Intelligence" },
-
-  ];
-
   return (
     <main>
       <div className="services-section-herobanner">
@@ -90,11 +79,11 @@ const Home = () => {
         </div>
       </section>
 
-      <div className="container-fluid py-5 section-4 bg-black" style={{ padding: "0 50px" }}>
+      <div className="container-fluid py-5 section-4 bg-black services-offer-container">
         <div className="row align-items-center">
-          <div className="col-md-6 text-section" ref={textRef} style={{ paddingRight: "25px" }}>
-            <h2 className="mb-4 header-1-clamp">What We Offer</h2>
-            <h3 className="header-2-clamp">Design Development</h3>
+          <div className="col-md-6 text-section services-offer-text" ref={textRef}>
+            <h2 className="mb-3 header-1-clamp what-we-offer-title">What We Offer</h2>
+            <h3 className="mb-3 header-2-clamp what-we-offer-subtitle">Design Development</h3>
             <p className="paragraph-clamp text-white">
               Whether you're a start-up aiming to establish your digital
               presence or a growing enterprise seeking to elevate your brand,
@@ -102,11 +91,11 @@ const Home = () => {
               dedicated to your success, with the expertise to deliver real
               results.
             </p>
-            <p className=' paragraph-clamp text-white' style={{ fontSize: 'clamp(10px, 1.5vmax, 80px)' }}>
+            <p className="paragraph-clamp text-white">
               Over the past 5 years, we’ve worked with countless clients,
               helping them achieve measurable growth and lasting impact.
             </p>
-            <p  className=' paragraph-clamp text-white'  style={{ fontSize: 'clamp(10px, 1.5vmax, 80px)' }}>
+            <p className="paragraph-clamp text-white">
               <strong>
                 Results, innovation, and growth are what we strive to bring to
                 every project.
@@ -114,7 +103,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="col-md-6 image-section" ref={imageRef} style={{ paddingLeft: "25px" }}>
+          <div className="col-md-6 image-section services-offer-image" ref={imageRef}>
             <img
               className="d-block w-100 custom-carousel-image"
               src="https://images.pexels.com/photos/3184428/pexels-photo-3184428.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -169,27 +158,92 @@ const Home = () => {
 
 
       <div className="container py-5">
-        <h1 className="services-herotitle">Services We Offer</h1>
-        <div className="row ">
-          {/* Show first 4 images */}
-          {images.slice(0, 6).map((img, index) => (
-            <div key={index} className="col-md-4 position-relative image-container ">
-              <img className="w-100 custom-image" src={img.src} alt={img.alt} />
+        <h1 className="services-herotitle mb-4">Services We Offer</h1>
+        <div className="row g-4">
+          {/* Show first 6 services */}
+          {servicesData.slice(0, 6).map((service, index) => (
+            <div
+              key={service.id || index}
+              className="col-md-4 col-sm-6 position-relative image-container service-card-interactive"
+              role="button"
+              tabIndex={0}
+              aria-label={`View details for ${service.title}`}
+              onClick={() => {
+                navigate(`/services/${service.slug}`);
+                window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+              }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  navigate(`/services/${service.slug}`);
+                  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+                }
+              }}
+            >
+              <img
+                className="w-100 custom-image"
+                src={service.src}
+                alt={service.alt || service.title}
+              />
               <div className="overlay-text">
-                <h2 className="industries-we-serve-title-text">{img.title}</h2>
+                <h2 className="industries-we-serve-title-text mb-1">
+                  {service.title}
+                </h2>
+                <p className="service-card-tagline d-none d-lg-block mb-0">
+                  {service.tagline}
+                </p>
               </div>
-              <div class="gradient-overlay"></div>
+
+              <div className="service-card-action">
+                <span className="service-action-btn">
+                  Explore Service →
+                </span>
+              </div>
+
+              <div className="gradient-overlay"></div>
             </div>
           ))}
-          {/* Show additional images only if `showAllServices` is true */}
+
+          {/* Show additional services only if `showAllServices` is true */}
           {showAllServices &&
-            images.slice(6).map((img, index) => (
-              <div key={index} className="col-md-4 position-relative image-container">
-                <img className="w-100 custom-image" src={img.src} alt={img.alt} />
+            servicesData.slice(6).map((service, index) => (
+              <div
+                key={service.id || index + 6}
+                className="col-md-4 col-sm-6 position-relative image-container service-card-interactive"
+                role="button"
+                tabIndex={0}
+                aria-label={`View details for ${service.title}`}
+                onClick={() => {
+                  navigate(`/services/${service.slug}`);
+                  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    navigate(`/services/${service.slug}`);
+                    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+                  }
+                }}
+              >
+                <img
+                  className="w-100 custom-image"
+                  src={service.src}
+                  alt={service.alt || service.title}
+                />
                 <div className="overlay-text">
-                  <h2>{img.title}</h2>
+                  <h2 className="mb-1">{service.title}</h2>
+                  <p className="service-card-tagline d-none d-lg-block mb-0">
+                    {service.tagline}
+                  </p>
                 </div>
-                <div class="gradient-overlay"></div>
+
+                <div className="service-card-action">
+                  <span className="service-action-btn">
+                    Explore Service →
+                  </span>
+                </div>
+
+                <div className="gradient-overlay"></div>
               </div>
             ))}
         </div>

@@ -1,12 +1,18 @@
 import React, { useState, memo } from "react";
+import { useNavigate } from "react-router-dom";
 import Disclaimer from "./disclaimer";
 import "../styles/internForm.css";
 
 const InternForm = () => {
+  const navigate = useNavigate();
   const [step, setStep] = useState(1);
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [showPaymentModal, setShowPaymentModal] = useState(false);
+
+  const handleClose = () => {
+    navigate("/careers-intern");
+  };
 
   const SUBMIT_URL = "/api/submit-intern";
 
@@ -22,7 +28,10 @@ const InternForm = () => {
     percentage: "",
     role: "",
     resume: "",
+    linkedin: "",
     portfolio: "",
+    hasWorkExp: "",
+    experienceDetails: "",
     country: "",
     state: "",
     city: "",
@@ -33,10 +42,11 @@ const InternForm = () => {
   });
 
   const roles = [
+    "Digital Marketing / Growth Strategist Intern",
+    "Digital Marketing Intern",
     "AI/ML Intern",
     "Gen AI Intern",
     "UI/UX Design Intern",
-    // "Digital Marketing Intern",
     "Business Analyst Intern",
     // "Data Science Intern",
     "Data Analyst Intern",
@@ -105,6 +115,11 @@ const InternForm = () => {
       }
       if (!formData.role) newErrors.role = "Internship Role is required";
       if (!formData.resume) newErrors.resume = "Resume is required";
+      if (!formData.hasWorkExp) {
+        newErrors.hasWorkExp = "Please select whether you have work experience";
+      } else if (formData.hasWorkExp === "yes" && !formData.experienceDetails.trim()) {
+        newErrors.experienceDetails = "Please enter your experience details";
+      }
     }
 
     if (step === 3) {
@@ -154,7 +169,10 @@ const InternForm = () => {
         branch: formData.branch,
         percentage: formData.percentage,
         internshipRole: formData.role,
+        hasWorkExperience: formData.hasWorkExp,
+        workExperience: formData.hasWorkExp === "yes" ? formData.experienceDetails : "None",
         resume: formData.resume,
+        linkedin: formData.linkedin,
         portfolio: formData.portfolio,
         country: formData.country,
         state: formData.state,
@@ -181,6 +199,27 @@ const InternForm = () => {
   return (
     <div className="form-container" style={{ marginTop: "40px" }}>
       <div className="form-card">
+        <button
+          type="button"
+          className="intern-close-btn"
+          onClick={handleClose}
+          aria-label="Close"
+          title="Close"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
         <div className="progress-bar">
           <div
             className="progress"
@@ -366,13 +405,72 @@ const InternForm = () => {
                 value={formData.resume || ""} 
                 onChange={handleChange}  />
               {errors.resume && <p className="error">{errors.resume}</p>}
+
               <label className="input-label">
-                GitHub/Portfolio/LinkedIn Link
+                Do you have work experience? <span className="required">*</span>
+              </label>
+              <div style={{ display: "flex", gap: "24px", marginTop: "6px", marginBottom: "14px" }}>
+                <label style={{ display: "flex", alignItems: "center", gap: "8px", color: "#e6edf3", cursor: "pointer", fontSize: "0.95rem" }}>
+                  <input
+                    type="radio"
+                    name="hasWorkExp"
+                    value="yes"
+                    checked={formData.hasWorkExp === "yes"}
+                    onChange={handleChange}
+                    style={{ cursor: "pointer", accentColor: "#ffffff", width: "18px", height: "18px" }}
+                  />
+                  Yes
+                </label>
+                <label style={{ display: "flex", alignItems: "center", gap: "8px", color: "#e6edf3", cursor: "pointer", fontSize: "0.95rem" }}>
+                  <input
+                    type="radio"
+                    name="hasWorkExp"
+                    value="no"
+                    checked={formData.hasWorkExp === "no"}
+                    onChange={handleChange}
+                    style={{ cursor: "pointer", accentColor: "#ffffff", width: "18px", height: "18px" }}
+                  />
+                  No
+                </label>
+              </div>
+              {errors.hasWorkExp && <p className="error">{errors.hasWorkExp}</p>}
+
+              {formData.hasWorkExp === "yes" && (
+                <div>
+                  <label className="input-label">
+                    Work Experience Details (Years / Role / Company) <span className="required">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="experienceDetails"
+                    placeholder="e.g. 1 Year as Marketing Associate at XYZ"
+                    value={formData.experienceDetails}
+                    onChange={handleChange}
+                  />
+                  {errors.experienceDetails && (
+                    <p className="error">{errors.experienceDetails}</p>
+                  )}
+                </div>
+              )}
+
+              <label className="input-label">
+                LinkedIn Profile URL
+              </label>
+              <input
+                type="url"
+                name="linkedin"
+                placeholder="https://linkedin.com/in/yourprofile"
+                value={formData.linkedin || ""}
+                onChange={handleChange}
+              />
+
+              <label className="input-label">
+                GitHub / Portfolio Link
               </label>
               <input
                 type="text"
                 name="portfolio"
-                placeholder="Enter GitHub/Portfolio/LinkedIn Link"
+                placeholder="Enter GitHub / Portfolio Link"
                 value={formData.portfolio}
                 onChange={handleChange}
               />

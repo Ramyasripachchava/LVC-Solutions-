@@ -1,44 +1,47 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../style.css';
-
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../style.css";
 
 const services = [
-  { icon: "home_app_logo", title: "Banking" },
-  { icon: "yard", title: "Education" },
-  { icon: "nest_eco_leaf", title: "Communications, and Information Services" },
-  { icon: "deployed_code", title: "High Tech" },
-  { icon: "stat_3", title: "Travel and Logistics" },
-  { icon: "store", title: "Retail" },
-  { icon: "home_iot_device", title: "Life Sciences" },
-  { icon: "manufacturing", title: "Manufacturing" },
+  { icon: "account_balance", title: "Banking" },
+  { icon: "school", title: "Education" },
+  { icon: "cell_tower", title: "Communications, and Information Services" },
+  { icon: "memory", title: "High Tech" },
+  { icon: "flight_takeoff", title: "Travel and Logistics" },
+  { icon: "storefront", title: "Retail" },
+  { icon: "biotech", title: "Life Sciences" },
+  { icon: "precision_manufacturing", title: "Manufacturing" },
   { icon: "public", title: "Public Services" },
-  { icon: "energy", title: "Energy, Resources, and Utilities" },
-  { icon: "storefront", title: "Markets" },
+  { icon: "bolt", title: "Energy, Resources, and Utilities" },
+  { icon: "trending_up", title: "Markets" },
   { icon: "newspaper", title: "Media" },
 ];
 
-
-
-const Home = () => {
+const IndustriesWeServe = () => {
   return (
-    <main style={{ fontSize: "14px",color:"#ffffff",fontWeight:"500",background:"#000000" }}>
-      <div className="container py-5">
-       
-        <div className="row">
-          {services.map((service, index) => (
-            <div key={index} className="col-md-6  col-sm-12 industries-item ">
-              <h2 style={{fontSize:"1rem",cursor:"pointer"}}>
-                <span className="material-symbols-outlined industries-we-serve-icon">
-                  {service.icon}
-                </span>
-                {service.title}
-              </h2>
-            </div>
-          ))}
+    <section className="industries-section bg-black text-white">
+      <div className="container py-4">
+        <div className="industries-grid-container">
+          <div className="row g-3 justify-content-center">
+            {services.map((service, index) => (
+              <div key={index} className="col-lg-6 col-md-6 col-12">
+                <div className="industries-item-card">
+                  <div className="industries-icon-box">
+                    <span className="material-symbols-outlined industries-we-serve-icon">
+                      {service.icon}
+                    </span>
+                  </div>
+                  <h3 className="industries-item-title mb-0">
+                    {service.title}
+                  </h3>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </main>
+    </section>
   );
 };
 
-export default Home;
+export default IndustriesWeServe;

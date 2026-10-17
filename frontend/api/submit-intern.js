@@ -15,11 +15,15 @@ module.exports = async function handler(req, res) {
     branch,
     percentage,
     internshipRole,
+    hasWorkExperience,
+    workExperience,
     resume,
+    linkedin,
     portfolio,
     country,
     state,
     city,
+    pinCode,
   } = req.body;
 
   // Build payload — secret is added server-side only (never sent to browser)
@@ -35,11 +39,15 @@ module.exports = async function handler(req, res) {
     branch,
     percentage,
     internshipRole,
+    hasWorkExperience,
+    workExperience,
     resume,
+    linkedin,
     portfolio,
     country,
     state,
     city,
+    pinCode,
   };
 
   if (!process.env.INTERN_SCRIPT_URL) {

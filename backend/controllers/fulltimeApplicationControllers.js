@@ -106,9 +106,11 @@ const submitFulltimeApplication = async (req, res) => {
       city,
       state,
       resume,
+      linkedin,
       skills,
       desiredJobTitle,
       education,
+      hasWorkExperience,
       workExperience,
     } = req.body;
 
@@ -126,9 +128,11 @@ const submitFulltimeApplication = async (req, res) => {
       city,
       state,
       resume,
+      linkedin,
       skills,
       desiredJobTitle,
       education,
+      hasWorkExperience,
       workExperience,
     };
 

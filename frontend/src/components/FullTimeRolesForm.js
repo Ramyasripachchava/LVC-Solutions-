@@ -1,4 +1,5 @@
 import { useState, useRef, memo } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/FullTimeRole.css";
 
 const Field = memo(({ label, required, optional, error, children }) => (
@@ -32,9 +33,18 @@ const Textarea = memo((props) => (
 const SUBMIT_URL = "/api/submit-fulltime";
 
 const FullTimeRolesForm = () => {
+  const navigate = useNavigate();
   const TOTAL = 4;
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
+
+  const handleClose = () => {
+    if (window.history.length > 1) {
+      navigate(-1);
+    } else {
+      navigate("/careers");
+    }
+  };
 
   const [p1, setP1] = useState({
     firstName: "",
@@ -60,6 +70,7 @@ const FullTimeRolesForm = () => {
     gradYear: "",
   });
 
+  const [hasWorkExp, setHasWorkExp] = useState("");
   const [workEntries, setWorkEntries] = useState([]);
   const [workForm, setWorkForm] = useState({
     open: false,
@@ -72,6 +83,7 @@ const FullTimeRolesForm = () => {
   });
 
   const [resume, setResume] = useState("");
+  const [linkedin, setLinkedin] = useState("");
   const [profilePic, setProfilePic] = useState(null);
   const [skillInput, setSkillInput] = useState("");
   const [skills, setSkills] = useState([]);
@@ -121,10 +133,12 @@ const FullTimeRolesForm = () => {
         city: p1.city,
         state: p1.state,
         resume: resume,
+        linkedin: linkedin,
         skills: skills.join(", "),
         desiredJobTitle: jobTitle,
         education: JSON.stringify(eduEntries),
-        workExperience: JSON.stringify(workEntries),
+        hasWorkExperience: hasWorkExp,
+        workExperience: hasWorkExp === "yes" ? JSON.stringify(workEntries) : "None",
       };
 
       const response = await fetch(SUBMIT_URL, {
@@ -195,7 +209,11 @@ const FullTimeRolesForm = () => {
   }
 
   function validateStep3() {
-    if (workEntries.length === 0) {
+    if (!hasWorkExp) {
+      setWorkErr("Please select whether you have work experience.");
+      return false;
+    }
+    if (hasWorkExp === "yes" && workEntries.length === 0) {
       setWorkErr("Please add at least one work experience entry.");
       return false;
     }
@@ -338,6 +356,28 @@ const FullTimeRolesForm = () => {
     <div className="msf-wrap">
      <div style={{ width: "100%", maxWidth: "540px" }}> 
       <div className="msf-card">
+        <button
+          type="button"
+          className="msf-close-btn"
+          onClick={handleClose}
+          aria-label="Close"
+          title="Close"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+
         {step <= TOTAL && (
           <div className="msf-progress">
             {[0, 1, 2, 3].map((i) => (
@@ -626,120 +666,163 @@ const FullTimeRolesForm = () => {
               <p>Add your professional experience</p>
             </div>
 
-            {workErr && <div className="msf-err" style={{ marginBottom: "15px", display: "block" }}>{workErr}</div>}
-
-            {workEntries.map((entry) => (
-              <div key={entry.id} className="msf-chip">
-                <div className="msf-chip-content">
-                  <div className="msf-chip-title">
-                    {entry.jobTitle || "—"}
-                    {entry.expType && (
-                      <span className="msf-chip-type"> · {entry.expType}</span>
-                    )}
-                  </div>
-                  <div className="msf-chip-sub">
-                    {entry.company}
-                    {entry.period ? ` · ${entry.period}` : ""}
-                  </div>
-                </div>
-                <div className="msf-chip-actions">
-                  <button className="msf-chip-btn edit" onClick={() => editWork(entry)}>
-                    ✎
-                  </button>
-                  <button className="msf-chip-btn remove" onClick={() => removeWork(entry.id)}>
-                    ✕
-                  </button>
-                </div>
+            <Field label="Do you have work experience?" required error={!hasWorkExp && workErr ? workErr : undefined}>
+              <div style={{ display: "flex", gap: "24px", marginTop: "6px", marginBottom: "14px" }}>
+                <label style={{ display: "flex", alignItems: "center", gap: "8px", color: "#e6edf3", cursor: "pointer", fontSize: "0.95rem" }}>
+                  <input
+                    type="radio"
+                    name="hasWorkExp"
+                    value="yes"
+                    checked={hasWorkExp === "yes"}
+                    onChange={() => {
+                      setHasWorkExp("yes");
+                      setWorkErr("");
+                    }}
+                    style={{ cursor: "pointer", accentColor: "#ffffff", width: "18px", height: "18px" }}
+                  />
+                  Yes
+                </label>
+                <label style={{ display: "flex", alignItems: "center", gap: "8px", color: "#e6edf3", cursor: "pointer", fontSize: "0.95rem" }}>
+                  <input
+                    type="radio"
+                    name="hasWorkExp"
+                    value="no"
+                    checked={hasWorkExp === "no"}
+                    onChange={() => {
+                      setHasWorkExp("no");
+                      setWorkErr("");
+                    }}
+                    style={{ cursor: "pointer", accentColor: "#ffffff", width: "18px", height: "18px" }}
+                  />
+                  No
+                </label>
               </div>
-            ))}
+            </Field>
 
-            {!workForm.open && (
-              <button
-                className="msf-btn-add-entry"
-                onClick={() => setWorkForm((f) => ({ ...f, open: true }))}
-              >
-                + Add Experience
-              </button>
+            {hasWorkExp === "no" && (
+              <div style={{ padding: "14px 16px", background: "rgba(255,255,255,0.05)", borderRadius: "8px", marginBottom: "20px", color: "#8b949e", fontSize: "0.9rem" }}>
+                ✓ No work experience required. Click Next to continue.
+              </div>
             )}
 
-            {workForm.open && (
-              <div className="msf-form-box">
-                <div className="msf-form-box-title">Add Role</div>
-                <Field label="Job Title" required>
-                  <Input
-                    value={workForm.jobTitle}
-                    placeholder="e.g. Software Engineer"
-                    onChange={(e) => setWorkForm((prev) => ({ 
-                      ...prev, 
-                      jobTitle: filterAlphabets(e.target.value) 
-                    }))}
-                  />
-                </Field>
-                <Field label="Company" required>
-                  <Input
-                    value={workForm.company}
-                    placeholder="e.g. Google"
-                    onChange={(e) => setWorkForm((prev) => ({ 
-                      ...prev, 
-                      company: filterAlphabets(e.target.value) 
-                    }))}
-                  />
-                </Field>
-                <Field label="Experience type" required>
-                  <SelectField
-                    value={workForm.expType}
-                    onChange={(e) => setWorkForm((prev) => ({ 
-                      ...prev, 
-                      expType: e.target.value 
-                    }))}
-                  >
-                    <option value="">Select</option>
-                    <option value="full-time">full-time</option>
-                    <option value="part-time">part-time</option>
-                    <option value="contract">contract</option>
-                    <option value="internship">internship</option>
-                  </SelectField>
-                </Field>
-                <Field label="Period" required>
-                  <Input
-                    value={workForm.period}
-                    placeholder="e.g. 2020 - Present"
-                    onChange={(e) =>
-                      setWorkForm((f) => ({ ...f, period: filterNumbers(e.target.value) }))
-                    }
-                  />
-                </Field>
-                <Field label="Description" required>
-                  <Textarea
-                    value={workForm.desc}
-                    placeholder="Brief description of your role..."
-                    onChange={(e) =>
-                      setWorkForm((f) => ({ ...f, desc: e.target.value }))
-                    }
-                  />
-                </Field>
-                <div className="msf-form-btn-row">
+            {hasWorkExp === "yes" && (
+              <>
+                {workErr && <div className="msf-err" style={{ marginBottom: "15px", display: "block" }}>{workErr}</div>}
+
+                {workEntries.map((entry) => (
+                  <div key={entry.id} className="msf-chip">
+                    <div className="msf-chip-content">
+                      <div className="msf-chip-title">
+                        {entry.jobTitle || "—"}
+                        {entry.expType && (
+                          <span className="msf-chip-type"> · {entry.expType}</span>
+                        )}
+                      </div>
+                      <div className="msf-chip-sub">
+                        {entry.company}
+                        {entry.period ? ` · ${entry.period}` : ""}
+                      </div>
+                    </div>
+                    <div className="msf-chip-actions">
+                      <button className="msf-chip-btn edit" onClick={() => editWork(entry)}>
+                        ✎
+                      </button>
+                      <button className="msf-chip-btn remove" onClick={() => removeWork(entry.id)}>
+                        ✕
+                      </button>
+                    </div>
+                  </div>
+                ))}
+
+                {!workForm.open && (
                   <button
-                    className="msf-btn-cancel"
-                    onClick={() =>
-                      setWorkForm({
-                        open: false,
-                        id: null,
-                        jobTitle: "",
-                        company: "",
-                        expType: "",
-                        period: "",
-                        desc: "",
-                      })
-                    }
+                    className="msf-btn-add-entry"
+                    onClick={() => setWorkForm((f) => ({ ...f, open: true }))}
                   >
-                    Cancel
+                    + Add Experience
                   </button>
-                  <button className="msf-btn-add" onClick={saveWork}>
-                    Add
-                  </button>
-                </div>
-              </div>
+                )}
+
+                {workForm.open && (
+                  <div className="msf-form-box">
+                    <div className="msf-form-box-title">Add Role</div>
+                    <Field label="Job Title" required>
+                      <Input
+                        value={workForm.jobTitle}
+                        placeholder="e.g. Software Engineer"
+                        onChange={(e) => setWorkForm((prev) => ({ 
+                          ...prev, 
+                          jobTitle: filterAlphabets(e.target.value) 
+                        }))}
+                      />
+                    </Field>
+                    <Field label="Company" required>
+                      <Input
+                        value={workForm.company}
+                        placeholder="e.g. Google"
+                        onChange={(e) => setWorkForm((prev) => ({ 
+                          ...prev, 
+                          company: filterAlphabets(e.target.value) 
+                        }))}
+                      />
+                    </Field>
+                    <Field label="Experience type" required>
+                      <SelectField
+                        value={workForm.expType}
+                        onChange={(e) => setWorkForm((prev) => ({ 
+                          ...prev, 
+                          expType: e.target.value 
+                        }))}
+                      >
+                        <option value="">Select</option>
+                        <option value="full-time">full-time</option>
+                        <option value="part-time">part-time</option>
+                        <option value="contract">contract</option>
+                        <option value="internship">internship</option>
+                      </SelectField>
+                    </Field>
+                    <Field label="Period" required>
+                      <Input
+                        value={workForm.period}
+                        placeholder="e.g. 2020 - Present"
+                        onChange={(e) =>
+                          setWorkForm((f) => ({ ...f, period: filterNumbers(e.target.value) }))
+                        }
+                      />
+                    </Field>
+                    <Field label="Description" required>
+                      <Textarea
+                        value={workForm.desc}
+                        placeholder="Brief description of your role..."
+                        onChange={(e) =>
+                          setWorkForm((f) => ({ ...f, desc: e.target.value }))
+                        }
+                      />
+                    </Field>
+                    <div className="msf-form-btn-row">
+                      <button
+                        className="msf-btn-cancel"
+                        onClick={() =>
+                          setWorkForm({
+                            open: false,
+                            id: null,
+                            jobTitle: "",
+                            company: "",
+                            expType: "",
+                            period: "",
+                            desc: "",
+                          })
+                        }
+                      >
+                        Cancel
+                      </button>
+                      <button className="msf-btn-add" onClick={saveWork}>
+                        Add
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </>
             )}
 
             <div className="msf-btn-row">
@@ -773,14 +856,15 @@ const FullTimeRolesForm = () => {
                 placeholder="Enter your resume link"
                 onChange={handleResume}
               />
-              {/* <button
-                type="button"
-                className={`msf-upload${resume ? " has-file" : ""}`}
-                onClick={() => resumeRef.current && resumeRef.current.click()}
-              >
-                <span style={{ fontSize: 22 }}>⬆</span>
-                <span>{resume ? `✓ ${resume.name}` : "Upload Resume (PDF)"}</span>
-              </button>  */}
+            </Field>
+
+            <Field label="LinkedIn Profile URL" optional>
+              <Input
+                type="url"
+                placeholder="https://linkedin.com/in/username"
+                value={linkedin}
+                onChange={(e) => setLinkedin(e.target.value)}
+              />
             </Field>
 
             <Field label="Profile Image" optional>
